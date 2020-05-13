@@ -1,14 +1,10 @@
+language: node_js
+dist: trusty
+node_js: 8.1
 
-language: node
-node_js:
-  - 10
-cache:
-  - npm
+addons:
+  firefox: latest
+  google-chrome: latest
 
 script:
-  - ./build_all.sh
-  - wget https://raw.githubusercontent.com/louiscklaw/travis-playlist/master/travis-build-merger/merge_if_success.sh
-  - bash merge_if_success.sh | tee merge.log
-
-import:
-  - credentials.yml
+  - npm i puppeteer@0.11.0 && node test.js;
