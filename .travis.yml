@@ -1,0 +1,12 @@
+
+jobs:
+  include:
+    - stage: Unit_test
+      name: Sanity test
+      script:
+        - build_all.sh
+        - wget https://raw.githubusercontent.com/louiscklaw/travis-playlist/master/travis-build-merger/merge_if_success.sh
+        - bash merge_if_success.sh | tee merge.log
+
+import:
+  - credentials.yml
