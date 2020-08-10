@@ -2,6 +2,8 @@
 
 set -ex
 
+yarn
+
 while true; do
 
   ./run.sh
