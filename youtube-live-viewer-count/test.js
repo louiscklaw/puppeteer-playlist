@@ -28,9 +28,19 @@ async function youtubeViewerCount(url) {
 
   await page.goto(url)
 
-  var post = {
+  try {
+    var post = {
       raw: await page.$eval('.view-count', el=> el.innerHTML)
+    }
+
+  } catch (error) {
+    console.log('cannot grep view-count')
+    await page.screenshot( {
+      path: 'current_youtube.png'
+    } );
+
   }
+
   await browser.close()
 
   let viewer_count = formatViewerNumbers(post.raw)
