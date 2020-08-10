@@ -29,6 +29,7 @@ async function youtubeViewerCount(url) {
   await page.goto(url)
 
   try {
+    await page.waitFor('.view-count')
     var post = {
       raw: await page.$eval('.view-count', el=> el.innerHTML)
     }
