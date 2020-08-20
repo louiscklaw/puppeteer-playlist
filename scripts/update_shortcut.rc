@@ -23,7 +23,7 @@ new_command_template='''
 new_from_##PROJ_NAME##(){
   new_from ##PROJ_DIR_NAME##
 
-  ./build.sh
+  ./init.sh
 }
 '''
 
