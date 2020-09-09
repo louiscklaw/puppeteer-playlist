@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -x
-
 helloearth(){
   echo /home/logic/_workspace/puppeteer-playlist/scripts/update_shortcut.rc
 }
