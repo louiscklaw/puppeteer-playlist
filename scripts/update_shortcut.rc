@@ -8,9 +8,9 @@ helloearth(){
 
 update_shortcut(){
   OWD=$PWD
-
-  cd $PROJ_HOME
-    cp ./.env /tmp/.env
+  cd /home/logic/_workspace/puppeteer-playlist
+  TMP_DIR=$(mktemp -d)
+  cp ./.env $TMP_DIR/.env
 
 python3 << END
 import os,sys
@@ -75,10 +75,8 @@ with open('/tmp/.env','w') as fo:
 
 END
 
+  cp $TMP_DIR/.env ./.env
 
-  cp /tmp/.env ./.env
-
-  cd ~
   cd $OWD
 }
 
