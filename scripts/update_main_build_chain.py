@@ -12,7 +12,7 @@ PROJ_HOME=os.path.abspath(os.path.join(SCRIPT_DIR,'..'))
 
 GITHUB_BUILD_MERGER_TRYOUT_FILEPATH=''
 if (PROJ_HOME.find('github-playlist') > -1):
-  GITHUB_BUILD_MERGER_TRYOUT_FILEPATH='{}/github-build-merger-tryout/subjob.yml'.format(PROJ_HOME)
+  GITHUB_BUILD_MERGER_TRYOUT_FILEPATH='{}/github-build-merger/subjob.yml'.format(PROJ_HOME)
 else:
   GITHUB_BUILD_MERGER_TRYOUT_FILEPATH='{}/github-build-merger/subjob.yml'.format(PROJ_HOME)
 
