@@ -32,7 +32,7 @@ async def fetchLink(url_to_scrape):
     fetch_link = getPendingLink()
 
     if fetch_link != '':
-      sleep(0.1)
+      sleep(1)
       await gotoUrl(page, fetch_link)
       fetch_result = await grepNewLink(page)
 
