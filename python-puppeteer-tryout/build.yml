@@ -4,7 +4,7 @@ python-puppeteer-tryout:
     - uses: actions/checkout@v2
 
     - run: |
-        npm install -g live-server
+        sudo npm install -g live-server
         cd python-puppeteer-tryout/test_pages
           live-server . &
         cd ../..
