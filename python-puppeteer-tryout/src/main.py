@@ -74,6 +74,8 @@ async def fetchLink(url_to_scrape):
       for link in uniq_links:
         addPendingLink(link)
 
+    print('number of page visited {}'.format(getVisitedHashCount()))
+
   await quitBrowser(browser)
 
 async def main():
@@ -82,15 +84,6 @@ async def main():
     print('fetch website {}'.format(website))
 
     await fetchLink(website)
-
-    # addPendingLink(website)
-
-    # while getRemainingLinkCount() > 0:
-    #   print('remaining link count {}'.format(getRemainingLinkCount()))
-    #   fetch_link = getPendingLink()
-
-    #   if fetch_link != '':
-    #     await fetchLink(fetch_link)
 
   else:
     sys.exit(-1)
