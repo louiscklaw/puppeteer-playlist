@@ -19,7 +19,6 @@ visited_hash = hash_helper()
 
 def storeVisitedLink(link_to_add):
   hash_to_add=getLinkHash(link_to_add)
-
   visited_hash.storeHash(hash_to_add)
 
 def checkVisitedLink(link_to_check):

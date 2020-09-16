@@ -29,13 +29,22 @@ class link_helper():
       self.oper_lock.release()
 
   def getLink(self):
-    result = ''
+    suppose_new_link = ''
 
     self.oper_lock.acquire()
 
     try:
-      result = self.link_list.pop(0)
-      storeVisitedLink(result)
+      suppose_new_link = self.link_list.pop(0)
+
+      # pop a link and assure the link havn't fetch before
+      while len(self.link_list)>0 and checkVisitedLink(suppose_new_link):
+        suppose_new_link = self.link_list.pop(0)
+
+      if len(self.link_list) < 1:
+        suppose_new_link=''
+      else:
+        print('findme')
+        storeVisitedLink(suppose_new_link)
 
     except Exception as e:
       print(e)
@@ -43,7 +52,7 @@ class link_helper():
     finally:
       self.oper_lock.release()
 
-    return result
+    return suppose_new_link
 
   def listLink(self):
     return self.link_list

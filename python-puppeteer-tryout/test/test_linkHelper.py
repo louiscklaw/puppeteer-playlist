@@ -24,6 +24,7 @@ def test_linkCount_duplicated_link():
 
   # fetched the same url again, addlink should skip adding into lh
   lh.addLink('https://www.google.com/?=test_linkHelper')
+  print(lh.linkCount())
   assert 0==lh.linkCount(), 'adding duplicated new link failed'
 
 def test_linkCount():
