@@ -16,7 +16,9 @@ async def initNewBrowser():
   return browser
 
 async def initNewPage(browser):
-  return await browser.newPage()
+  page = await browser.newPage()
+  await page.setDefaultNavigationTimeout(0)
+  return page
 
 async def gotoUrl(page, url):
   await page.goto(url)
