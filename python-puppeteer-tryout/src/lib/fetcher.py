@@ -10,7 +10,7 @@ async def initNewBrowser():
     'ignoreHTTPSErrors': True,
     'defaultViewport':{
       'width': 1920,
-      'height': 1080*10
+      'height': 1080*3
     }
   })
   return browser
