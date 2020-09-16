@@ -19,12 +19,12 @@ def test_linkCount_duplicated_link():
   assert 1==lh.linkCount(), 'adding new link failed'
 
   # fetcher visit link, it will add it into link visited
-  lh.getLink()
+  assert 'https://www.google.com/?=test_linkHelper'==lh.getLink(), 'get new link failed, link is not expected'
   assert 0==lh.linkCount(), 'get new link failed'
 
-  # fetched the same url again, addlink should skip adding into lh
+  # # fetched the same url again, addlink should skip adding into lh
   lh.addLink('https://www.google.com/?=test_linkHelper')
-  print(lh.linkCount())
+  # print(lh.linkCount())
   assert 0==lh.linkCount(), 'adding duplicated new link failed'
 
 def test_linkCount():

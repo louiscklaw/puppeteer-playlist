@@ -29,9 +29,8 @@ def test_getPendingLink():
     result = pendingLink.getPendingLink()
     assert link==result, 'error during getting pending link'
 
-  haha=pendingLink.getPendingLink()
-  pprint(haha)
-  assert haha=='','list should empty as popping duplicated link'
+  result=pendingLink.getPendingLink()
+  assert result=='','get result should empty as popping duplicated link'
 
 
 def test_addPendingLink():
