@@ -43,6 +43,7 @@ class link_helper():
 
         # # pop a link and assure the link havn't fetch before
         while len(self.link_list)>0 and check_visited_link_result:
+          print('duplicated link poped, skipping ... ')
           suppose_new_link = self.link_list.pop(0)
           check_visited_link_result = checkVisitedLink(suppose_new_link)
 

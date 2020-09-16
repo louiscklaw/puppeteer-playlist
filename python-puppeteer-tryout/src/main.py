@@ -56,6 +56,9 @@ async def main():
   while getRemainingLinkCount() > 0:
     print('remaining link count {}'.format(getRemainingLinkCount()))
     fetch_link = getPendingLink()
-    await fetchLink(fetch_link)
+
+    if fetch_link != '':
+      await fetchLink(fetch_link)
+
 
 asyncio.get_event_loop().run_until_complete(main())
