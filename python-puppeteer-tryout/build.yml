@@ -20,6 +20,8 @@ python-puppeteer-tryout:
         export LC_ALL=C.UTF-8
         export LANG=C.UTF-8
 
+        pipenv --help
+
     - run: |
         cd python-puppeteer-tryout
           pipenv sync
