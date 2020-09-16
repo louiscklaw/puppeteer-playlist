@@ -1,13 +1,25 @@
+import os,sys
 import asyncio
-from pyppeteer import launch
 import json
+
+from pyppeteer import launch
+
+SRC_DIR=os.path.dirname(__file__)
+
+PROJ_HOME=os.path.join(SRC_DIR,'..')
+SRC_LIB=os.path.join(SRC_DIR,'lib')
+
+sys.path.append(SRC_DIR)
+
+from lib.pendingLink import *
 
 link_hash=[]
 content_hash=[]
-
 visited_hash=[]
 
 async def fetchLink(url):
+    print('fetching {}'.format(url))
+
     browser = await launch({
       'headless': True,
       'ignoreHTTPSErrors': True,
@@ -26,7 +38,6 @@ async def fetchLink(url):
       let test_s = new Set()
       let b = document.querySelectorAll('a')
       let links = Array.prototype.map.call(b, obj => obj.href);
-
       return {links}
     }
     ''')
@@ -34,16 +45,17 @@ async def fetchLink(url):
     links_from_page = fetched_links['links']
     uniq_links = set(sorted(links_from_page))
 
-    print(list(uniq_links))
-    # print(json.loads(dimensions))
-    link_with_hash = zip(uniq_links, map(lambda x : getLinkHash(x), uniq_links))
+    for link in uniq_links:
+      addPendingLink(link)
 
-
-
-    await browser.close()
+    return await browser.close()
 
 async def main():
   # return await fetchLink("https://hktvmall.com")
-  return await fetchLink("http://localhost:8080")
+  addPendingLink('http://localhost:8080')
+  while getRemainingLinkCount() > 0:
+    print('remaining link count {}'.format(getRemainingLinkCount()))
+    fetch_link = getPendingLink()
+    await fetchLink(fetch_link)
 
 asyncio.get_event_loop().run_until_complete(main())

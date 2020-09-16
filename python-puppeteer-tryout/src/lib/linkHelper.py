@@ -35,6 +35,7 @@ class link_helper():
 
     try:
       result = self.link_list.pop(0)
+      storeVisitedLink(result)
 
     except Exception as e:
       print(e)
@@ -44,8 +45,24 @@ class link_helper():
 
     return result
 
-  def list_link():
+  def listLink(self):
     return self.link_list
+
+  def linkCount(self):
+    result=0
+
+    try:
+      self.oper_lock.acquire()
+      result=len(self.link_list)
+
+    except Exception as e:
+      raise e
+      print('error exit')
+
+    finally:
+      self.oper_lock.release()
+
+    return result
 
   def helloworld(self):
     print('helloworld {}'.format(__file__))

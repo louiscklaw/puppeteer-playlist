@@ -25,10 +25,16 @@ def storeVisitedLink(link_to_add):
 def checkVisitedLink(link_to_check):
   '''return true if visited'''
   hash_to_check=getLinkHash(link_to_check)
+
+  listVisitedHash()
+
   return visited_hash.checkHashExist(hash_to_check)
 
 def listVisitedHash():
-  pprint(visited_hash.list_link())
+  return visited_hash.listHash()
+
+def getVisitedHashCount():
+  return visited_hash.getCount()
 
 def helloworld():
   print('helloworld {}'.format(__file__))

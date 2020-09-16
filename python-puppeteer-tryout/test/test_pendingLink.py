@@ -18,6 +18,12 @@ link_to_test=[
   'https://www.amazon.com',
 ]
 
+def test_getRemainingLinkCount():
+  for link in link_to_test:
+    pendingLink.addPendingLink(link)
+
+  assert 10==pendingLink.getRemainingLinkCount(),'error during getting remaining link count'
+
 def test_getPendingLink():
   for link in link_to_test:
     result = pendingLink.getPendingLink()
@@ -33,4 +39,5 @@ def test_Helloworld():
 def test():
   test_Helloworld()
   test_addPendingLink()
+  test_getRemainingLinkCount()
   test_getPendingLink()

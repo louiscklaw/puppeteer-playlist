@@ -24,6 +24,7 @@ class hash_helper():
       self.oper_lock.release()
 
   def checkHashExist(self, hash_to_test):
+    result = False
     self.oper_lock.acquire()
 
     try:
@@ -37,8 +38,11 @@ class hash_helper():
 
     return result
 
-  def list_link():
+  def listHash(self):
     return self.hash_list
+
+  def getCount(self):
+    return len(self.hash_list)
 
   def helloworld(self):
     print('helloworld {}'.format(__file__))
