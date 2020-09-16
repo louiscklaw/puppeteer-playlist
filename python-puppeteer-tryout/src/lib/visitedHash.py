@@ -2,7 +2,9 @@ import os,sys
 from pprint import pprint
 import tempfile
 import json
-from linkHelper import *
+from hashHelper import *
+
+from getLinkHash import *
 
 '''handle visited link'''
 
@@ -13,14 +15,20 @@ from linkHelper import *
 # def storeHash(hash_to_store):
 #   return json.dump(hash_to_store)
 
-visited_link = link_helper()
+visited_hash = hash_helper()
 
-def storeVisitedLink(hash_to_add):
-  visited_link.storeLink(hash_to_add)
+def storeVisitedLink(link_to_add):
+  hash_to_add=getLinkHash(link_to_add)
 
-def checkVisitedHash(hash_to_check):
+  visited_hash.storeHash(hash_to_add)
+
+def checkVisitedLink(link_to_check):
   '''return true if visited'''
-  return visited_link.checkLinkExist(hash_to_check)
+  hash_to_check=getLinkHash(link_to_check)
+  return visited_hash.checkHashExist(hash_to_check)
+
+def listVisitedHash():
+  pprint(visited_hash.list_link())
 
 def helloworld():
   print('helloworld {}'.format(__file__))

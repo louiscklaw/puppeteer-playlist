@@ -10,14 +10,14 @@ sys.path.append(SRC_LIB)
 
 import visitedHash
 
-def test_visitedLink():
-  visitedHash.storeVisitedLink('blablabla')
-  assert False==visitedHash.checkVisitedHash('123321'), 'error found during testing unvisited link'
-  assert True==visitedHash.checkVisitedHash('blablabla'), 'error found during testing visited link'
+def test_visitedHash():
+  visitedHash.storeVisitedLink('http://www.google.com')
+  assert False==visitedHash.checkVisitedLink('http://www.yahoo.com'), 'error found during testing unvisited link'
+  assert True==visitedHash.checkVisitedLink('http://www.google.com'), 'error found during testing visited link'
 
 def test_Helloworld():
   visitedHash.helloworld()
 
 def test():
   test_Helloworld()
-  test_visitedLink()
+  test_visitedHash()
