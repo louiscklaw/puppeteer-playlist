@@ -1,0 +1,20 @@
+name: master_build
+on:
+  push:
+jobs:
+
+  #
+  # /home/logic/_workspace/github-playlist/action-secrets-tryout/build.yml
+  #
+  # https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
+  python-puppeteer-tryout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: python-puppeteer-tryout
+        run: |
+          cd python-puppeteer-tryout
+            pipenv sync
+            pipenv run python3 ./main.py
+          cd ..
