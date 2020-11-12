@@ -11,3 +11,8 @@ python-puppeteer-tryout:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: 'upload-artifact-tryout'
+        path: python-puppeteer-tryout/*.png
