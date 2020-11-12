@@ -23,9 +23,9 @@ jobs:
           MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
   
   # 
-  # /home/logic/_workspace/puppeteer-playlist/python-puppeteer-tryout/build.yml
+  # /home/logic/_workspace/puppeteer-playlist/pyppeteer-tryout/build.yml
   # 
-  python-puppeteer-tryout:
+  pyppeteer-tryout:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -43,7 +43,7 @@ jobs:
   
           pipenv --help
   
-          pushd python-puppeteer-tryout
+          pushd pyppeteer-tryout
             pipenv sync
             pipenv run python3 ./main.py
           popd
@@ -56,7 +56,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: 'upload-artifact-tryout'
-          path: python-puppeteer-tryout/*.png
+          path: pyppeteer-tryout/*.png
   
   
 
@@ -91,7 +91,7 @@ jobs:
           github-build-merger/test.sh
   
   merge:
-    needs: [puppeteer-helloworld-tryout, python-puppeteer-tryout, test_merger]
+    needs: [puppeteer-helloworld-tryout, pyppeteer-tryout, test_merger]
     runs-on: ubuntu-latest
     steps:
       - name: checkout

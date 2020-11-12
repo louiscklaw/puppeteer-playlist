@@ -1,4 +1,4 @@
-python-puppeteer-tryout:
+pyppeteer-tryout:
   runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v2
@@ -16,7 +16,7 @@ python-puppeteer-tryout:
 
         pipenv --help
 
-        pushd python-puppeteer-tryout
+        pushd pyppeteer-tryout
           pipenv sync
           pipenv run python3 ./main.py
         popd
@@ -29,4 +29,4 @@ python-puppeteer-tryout:
     - uses: actions/upload-artifact@v2
       with:
         name: 'upload-artifact-tryout'
-        path: python-puppeteer-tryout/*.png
+        path: pyppeteer-tryout/*.png
