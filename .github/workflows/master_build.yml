@@ -44,6 +44,7 @@ jobs:
           pipenv --help
   
           pushd python-puppeteer-tryout
+            pipenv sync
             pipenv run python3 ./main.py
           popd
   
