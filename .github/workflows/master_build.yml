@@ -4,6 +4,23 @@ on:
 
 jobs:
 
+  # 
+  # /home/logic/_workspace/puppeteer-playlist/puppeteer-helloworld-tryout/build.yml
+  # 
+  puppeteer-helloworld-tryout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          pushd puppeteer-helloworld-tryout
+            node test.js
+          popd
+  
+        env: # Or as an environment variable
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+  
   
 
   # 
@@ -37,7 +54,7 @@ jobs:
           github-build-merger/test.sh
   
   merge:
-    needs: [test_merger]
+    needs: [puppeteer-helloworld-tryout, test_merger]
     runs-on: ubuntu-latest
     steps:
       - name: checkout
