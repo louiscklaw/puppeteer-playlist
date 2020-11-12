@@ -4,6 +4,7 @@ puppeteer-helloworld-tryout:
     - uses: actions/checkout@v2
     - run: |
         pushd puppeteer-helloworld-tryout
+          yarn
           node test.js
         popd
 
