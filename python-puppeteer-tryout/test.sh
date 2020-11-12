@@ -2,6 +2,4 @@
 
 set -ex
 
-yarn
-
-node test.js
+pipenv run python3 ./main.py
