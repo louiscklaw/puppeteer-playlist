@@ -2,4 +2,4 @@
 
 set -ex
 
-yarn test:integration
+yarn test:e2eTest

@@ -11,8 +11,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "test:integration": "jest -c integration/jest.config.js",
-    "test:integrationWithWatch": "jest -c integration/jest.config.js --watch",
+    "test:e2eTest": "jest -c e2e-test/jest.config.js",
+    "test:e2eTestWithWatch": "jest -c e2e-test/jest.config.js --watch",
     "eject": "react-scripts eject"
   },
   "devDependencies": {

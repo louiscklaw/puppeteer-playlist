@@ -7,4 +7,4 @@ rm -rf yarn.lock || true
 
 yarn --dev
 
-yarn test:integration
+yarn test:e2eTest
