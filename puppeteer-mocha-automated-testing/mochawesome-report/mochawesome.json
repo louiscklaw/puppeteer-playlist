@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2021-07-20T14:18:04.333Z",
-    "end": "2021-07-20T14:18:21.367Z",
-    "duration": 17034,
+    "start": "2021-07-20T14:19:31.029Z",
+    "end": "2021-07-20T14:19:37.169Z",
+    "duration": 6140,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -19,7 +19,7 @@
     "pendingPercentClass": "danger"
   },
   "suites": {
-    "uuid": "f8d3540c-9d1b-4cf8-aa5a-f5ba957cd7ed",
+    "uuid": "edeb30b3-2a80-433f-990d-cddf1ae055a6",
     "title": "",
     "fullFile": "",
     "file": "",
@@ -28,14 +28,14 @@
         "title": "\"before all\" hook in \"{root}\"",
         "fullTitle": "\"before all\" hook in \"{root}\"",
         "timedOut": false,
-        "duration": 724,
+        "duration": 634,
         "pass": false,
         "fail": false,
         "pending": false,
         "code": "global.expect = expect;\nglobal.browser = await puppeteer.launch(opts);",
         "err": {},
         "isRoot": true,
-        "uuid": "8a273389-8691-42c7-98f5-e64221583d97",
+        "uuid": "ad28311c-b3d0-4eff-b344-7a08d8afb1e5",
         "isHook": true,
         "skipped": false
       }
@@ -45,14 +45,14 @@
         "title": "\"after all\" hook in \"{root}\"",
         "fullTitle": "\"after all\" hook in \"{root}\"",
         "timedOut": false,
-        "duration": 48,
+        "duration": 62,
         "pass": false,
         "fail": false,
         "pending": false,
-        "code": "browser.close();\nsetTimeout( () => { cmd.run('node server.js');}, 5000)\nsetTimeout(() => {opn('http://localhost:9988');}, 2000);\n // open('./mochawesome-report/mochawesome.html');\nglobal.browser = globalVariables.browser;\nglobal.expect = globalVariables.expect;",
+        "code": "browser.close();\nsetTimeout(() => {\n  cmd.run(\"node server.js\");\n}, 5000);\nsetTimeout(() => {\n  opn(\"http://localhost:9988\");\n}, 2000);\n// open('./mochawesome-report/mochawesome.html');\nglobal.browser = globalVariables.browser;\nglobal.expect = globalVariables.expect;",
         "err": {},
         "isRoot": true,
-        "uuid": "3d3684a7-5c35-4df7-9b85-029dd6200599",
+        "uuid": "80cbc34f-8451-4983-8fae-a865a443f34d",
         "isHook": true,
         "skipped": false
       }
@@ -60,7 +60,7 @@
     "tests": [],
     "suites": [
       {
-        "uuid": "73a3e9f9-75b4-427b-994a-b2f8cae136a5",
+        "uuid": "77211e69-11d6-40ac-80bc-dea8403b203a",
         "title": "simple test for fv main console",
         "fullFile": "/home/logic/_workspace/puppeteer-playlist/puppeteer-mocha-automated-testing/test/sample.spec.js",
         "file": "/test/sample.spec.js",
@@ -69,14 +69,14 @@
             "title": "\"before all\" hook in \"simple test for fv main console\"",
             "fullTitle": "simple test for fv main console \"before all\" hook in \"simple test for fv main console\"",
             "timedOut": false,
-            "duration": 1049,
+            "duration": 272,
             "pass": false,
             "fail": false,
             "pending": false,
             "code": "page = await browser.newPage();\nawait page.goto(\"http://localhost:5000\");\nawait page.setViewport({ width: 1920, height: 1040 });",
             "err": {},
             "isRoot": false,
-            "uuid": "2bf5aee9-8c81-471d-a248-21280602eaf1",
+            "uuid": "de589392-b476-4721-a543-d302b647daeb",
             "isHook": true,
             "skipped": false
           }
@@ -86,14 +86,14 @@
             "title": "\"after all\" hook in \"simple test for fv main console\"",
             "fullTitle": "simple test for fv main console \"after all\" hook in \"simple test for fv main console\"",
             "timedOut": false,
-            "duration": 119,
+            "duration": 29,
             "pass": false,
             "fail": false,
             "pending": false,
             "code": "await page.close();",
             "err": {},
             "isRoot": false,
-            "uuid": "114483ff-442d-47b2-b985-99b6147c3398",
+            "uuid": "440ecf0e-2b60-49d5-be4d-485ebaec535f",
             "isHook": true,
             "skipped": false
           }
@@ -103,7 +103,7 @@
             "title": "should login to home page",
             "fullTitle": "simple test for fv main console should login to home page",
             "timedOut": false,
-            "duration": 15087,
+            "duration": 5132,
             "state": "passed",
             "speed": "slow",
             "pass": true,
@@ -112,19 +112,19 @@
             "code": "const emailInput = \"#login-email\";\nconst passwordInput = \"#login-password\";\nconst submitSelector = \"#login-submit\";\nlinkEmail = await page.$(emailInput);\nlinkPassword = await page.$(passwordInput);\nlinkSubmit = await page.$(submitSelector);\nawait linkEmail.click({ clickCount: 3 });\nawait linkEmail.type(\"tariqul.islam.rony@gmail.com\"); // add the email address for linkedin //\nawait linkPassword.click({ clickCount: 3 });\nawait linkPassword.type(\"programmerrony01\"); // add password for linkedin account\nawait linkSubmit.click();\nawait page.waitForNavigation();\nawait page.waitFor(3000);",
             "err": {},
             "isRoot": false,
-            "uuid": "c797f917-9d7a-41ce-831f-a428ff2bee57",
+            "uuid": "11bcb6b4-d71e-4725-971e-ae0bbcf03bf3",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "c797f917-9d7a-41ce-831f-a428ff2bee57"
+          "11bcb6b4-d71e-4725-971e-ae0bbcf03bf3"
         ],
         "failures": [],
         "pending": [],
         "skipped": [],
-        "duration": 15087,
+        "duration": 5132,
         "root": false,
         "rootEmpty": false,
         "_timeout": 0
