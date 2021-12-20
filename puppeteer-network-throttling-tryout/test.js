@@ -1,4 +1,4 @@
-const puppeteer = require("puppeteer");
+const puppeteer = require('puppeteer');
 
 let NETWORK_PRESETS = {
   OFFLINE: {
@@ -68,26 +68,21 @@ let NETWORK_PRESETS = {
 
   // Connect to Chrome DevTools
   // https://chromedevtools.github.io/devtools-protocol/
-  const client = await page.target().createCDPSession();
+  const clientCDPSession = await page.target().createCDPSession();
 
   // Set throttling property
-  await client.send(
-    "Network.emulateNetworkConditions",
-    NETWORK_PRESETS.OFFLINE
-  );
+  await clientCDPSession.send('Network.emulateNetworkConditions', NETWORK_PRESETS.OFFLINE);
 
   await page.waitForTimeout(1 * 1000);
 
   // Navigate and take a screenshot
-  await page
-    .goto("https://fdalvi.github.io")
-    .catch((err) => console.error("capture error due to network disconnect"));
-  await page.screenshot({ path: "screenshot_offline.png" });
+  await page.goto('https://fdalvi.github.io').catch((err) => console.error('capture error due to network disconnect'));
+  await page.screenshot({ path: 'screenshot_offline.png' });
 
-  await client.send("Network.emulateNetworkConditions", NETWORK_PRESETS.WiFi);
+  await clientCDPSession.send('Network.emulateNetworkConditions', NETWORK_PRESETS.WiFi);
 
   await page.reload();
-  await page.screenshot({ path: "screenshot_online.png" });
+  await page.screenshot({ path: 'screenshot_online.png' });
 
   await browser.close();
 })();
