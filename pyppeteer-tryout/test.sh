@@ -2,6 +2,8 @@
 
 set -ex
 
+python -V
+
 pip install pipenv
 
 pipenv sync
