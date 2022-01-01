@@ -16,3 +16,7 @@ popd
 pushd pyppeteer-tryout
   bash test.sh
 popd
+
+pushd pyppeteer-page-object-tryout
+  bash test.sh
+popd
