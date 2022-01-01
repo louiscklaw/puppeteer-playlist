@@ -1,8 +1,10 @@
-.config
-.npm
 
-*.png
+viewer_count.json
+
+.env
+
 **/node_modules
+**/build
 
 # Logs
 logs

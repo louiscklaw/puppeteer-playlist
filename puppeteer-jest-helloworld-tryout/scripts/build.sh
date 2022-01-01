@@ -2,4 +2,4 @@
 
 set -ex
 
-node test.js
+yarn test:e2eTest
