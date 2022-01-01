@@ -2,9 +2,6 @@
 
 set -ex
 
-
-sudo apt install -y python python-pip
-
 pip install pipenv
 
 python -V
