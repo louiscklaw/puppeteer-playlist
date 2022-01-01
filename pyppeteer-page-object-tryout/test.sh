@@ -4,7 +4,7 @@ set -ex
 
 python -V
 
-apt install -y python-pip
+apt install -y python python-pip
 
 pip install pipenv
 
