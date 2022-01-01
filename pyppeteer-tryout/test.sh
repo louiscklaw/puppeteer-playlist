@@ -4,6 +4,8 @@ set -ex
 
 python -V
 
+apt install -y python-pip
+
 pip install pipenv
 
 pipenv sync
