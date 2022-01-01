@@ -9,6 +9,6 @@ pushd puppeteer-helloworld-tryout
   bash scripts/build.sh
 popd
 
-pushd puppeteer-mocha-automated-testing
+pushd pagechange-alert-visual-diff-tryout
   bash scripts/build.sh
 popd
