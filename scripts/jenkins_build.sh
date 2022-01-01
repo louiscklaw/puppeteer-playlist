@@ -15,6 +15,6 @@ popd
 
 
 
-git merge master
+git merge origin/master
 git push
 
