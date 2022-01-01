@@ -9,6 +9,6 @@ pushd puppeteer-helloworld-tryout
   bash scripts/build.sh
 popd
 
-pushd puppeteer-mocha-chai-helloworld-tryout
+pushd puppeteer-mocha-automated-testing
   bash scripts/build.sh
 popd
