@@ -8,11 +8,11 @@ popd
 
 scripts/test/setup.sh
 
-pushd tests_host
+pushd tests_src
   yarn --dev
 popd
 
-pushd tests_host
+pushd tests_src
   yarn run int_test
 popd
 
