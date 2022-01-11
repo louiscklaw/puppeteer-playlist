@@ -3,6 +3,7 @@
 set -ex
 
 export PORT=3001
+export BROWSER=none
 
 fuser -k -n tcp $PORT || true
 
