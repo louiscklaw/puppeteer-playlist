@@ -12,8 +12,10 @@ fuser -k -n tcp 3002 || true
 sleep 1
 
 # kill firebase emulator
-killall firebase || true
-sleep 1
+pushd firebase
+  scripts/clear.sh
+  
+popd
 
 
 echo 'clear done'

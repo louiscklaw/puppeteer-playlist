@@ -3,6 +3,7 @@
 set -ex
 
 pushd firebase
+  scripts/clear.sh
   scripts/start_fb.sh
 popd
 
