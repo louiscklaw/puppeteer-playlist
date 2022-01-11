@@ -1,0 +1,67 @@
+{
+  "child": {
+    "child1": {
+      "child1": {
+        "directory": "/home/logic/_workspace/puppeteer-playlist/puppeteer-firebase-multihost-vm/react_host_cms/App",
+        "height": 939,
+        "profile": "a40725b7-ae4e-407f-a186-d968decddd19",
+        "readOnly": false,
+        "synchronizedInput": true,
+        "type": "Terminal",
+        "uuid": "cbe47429-701f-40d3-a4fd-8edc653165b4",
+        "width": 540
+      },
+      "child2": {
+        "directory": "/home/logic/_workspace/puppeteer-playlist/puppeteer-firebase-multihost-vm/react_host_admin/App",
+        "height": 939,
+        "profile": "a40725b7-ae4e-407f-a186-d968decddd19",
+        "readOnly": false,
+        "synchronizedInput": true,
+        "type": "Terminal",
+        "uuid": "fc1b0e6d-8760-436b-82ba-6391064ba8fd",
+        "width": 540
+      },
+      "orientation": 1,
+      "position": 49,
+      "ratio": 0.499733901011176151,
+      "type": "Paned"
+    },
+    "child2": {
+      "child1": {
+        "directory": "/home/logic/_workspace/puppeteer-playlist/puppeteer-firebase-multihost-vm/react_host_client/App",
+        "height": 939,
+        "profile": "a40725b7-ae4e-407f-a186-d968decddd19",
+        "readOnly": false,
+        "synchronizedInput": true,
+        "type": "Terminal",
+        "uuid": "ca4f87df-4803-4823-a850-97c38a8f429e",
+        "width": 539
+      },
+      "child2": {
+        "directory": "/home/logic/_workspace/puppeteer-playlist/puppeteer-firebase-multihost-vm/firebase",
+        "height": 939,
+        "profile": "a40725b7-ae4e-407f-a186-d968decddd19",
+        "readOnly": false,
+        "synchronizedInput": true,
+        "type": "Terminal",
+        "uuid": "5a359e2f-32f2-4061-b29b-70704260122e",
+        "width": 539
+      },
+      "orientation": 1,
+      "position": 49,
+      "ratio": 0.499733901011176151,
+      "type": "Paned"
+    },
+    "orientation": 0,
+    "position": 50,
+    "ratio": 0.5,
+    "type": "Paned"
+  },
+  "height": 1879,
+  "name": "${title}",
+  "synchronizedInput": false,
+  "type": "Session",
+  "uuid": "72699c25-3580-45f6-a6b1-3bf780b89773",
+  "version": "1.0",
+  "width": 1080
+}
