@@ -1,5 +1,7 @@
-const assert = require("assert");
-const puppeteer = require("puppeteer");
+const assert = require('assert');
+const puppeteer = require('puppeteer');
+
+const TEST_HOME = __dirname;
 
 let browser;
 let page;
@@ -8,11 +10,11 @@ before(async () => {
   browser = await puppeteer.launch({
     args: [
       // Required for Docker version of Puppeteer
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
       // This will write shared memory files into /tmp instead of /dev/shm,
       // because Docker’s default for /dev/shm is 64MB
-      "--disable-dev-shm-usage",
+      '--disable-dev-shm-usage',
     ],
   });
 
@@ -33,12 +35,12 @@ after(async () => {
 });
 
 describe(
-  "react_host_admin helloworld",
+  'react_host_cms helloworld',
   () => {
-    it("renders", async () => {
-      const response = await page.goto("http://localhost:3000/");
+    it('renders', async () => {
+      const response = await page.goto('http://localhost:3002/');
       assert(response.ok());
-      await page.screenshot({ path: `screenshots/react_host_admin/app.png` });
+      await page.screenshot({ path: `${TEST_HOME}/app.png` });
     });
   },
   30 * 1000
