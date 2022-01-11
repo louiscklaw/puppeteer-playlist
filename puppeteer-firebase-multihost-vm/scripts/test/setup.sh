@@ -26,15 +26,15 @@ popd
 
 
 pushd react_host_admin/App
-  scripts/build.sh &
+  scripts/dev.sh &
 popd
 
 pushd react_host_client/App
-  scripts/build.sh &
+  scripts/dev.sh &
 popd
 
 pushd react_host_cms/App
-  scripts/build.sh &
+  scripts/dev.sh &
 popd
 
 # wait a while for servers to settle
