@@ -9,8 +9,7 @@ const UserFunctionalComponent = () => {
   const [email, setEmail] = React.useState('');
 
   const [listening_result, setListeningResult] = React.useState('');
-  const [single_listening_result, setSingleListeningResult] =
-    React.useState('');
+  const [single_listening_result, setSingleListeningResult] = React.useState('');
 
   const listUser = () => {
     let temp_users = [];
@@ -28,13 +27,13 @@ const UserFunctionalComponent = () => {
   const addUser = (e) => {
     e.preventDefault();
 
-    const userRef = db
-      .collection('users')
-      .add({ fullname, email })
-      .then(() => {
-        setFullname('');
-        setEmail('');
-      });
+    // const userRef = db
+    //   .collection('users')
+    //   .add({ fullname, email })
+    //   .then(() => {
+    //     setFullname('');
+    //     setEmail('');
+    //   });
   };
 
   const deleteUser = (e) => {
@@ -62,10 +61,7 @@ const UserFunctionalComponent = () => {
   };
 
   const updateUser = () => {
-    return db
-      .collection('users')
-      .doc('A5JOk2uKnwd5LXPKAsoo')
-      .set({ hello: 'world' }, { merge: true });
+    return db.collection('users').doc('A5JOk2uKnwd5LXPKAsoo').set({ hello: 'world' }, { merge: true });
   };
 
   React.useEffect(() => {
@@ -103,20 +99,8 @@ const UserFunctionalComponent = () => {
 
       <div>Add:</div>
       <form onSubmit={(e) => addUser(e)}>
-        <input
-          type="text"
-          name="fullname"
-          placehodler="fullname"
-          onChange={(e) => setFullname(e.target.value)}
-          value={fullname}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
+        <input type="text" name="fullname" placehodler="fullname" onChange={(e) => setFullname(e.target.value)} value={fullname} />
+        <input type="email" name="email" placeholder="email" onChange={(e) => setEmail(e.target.value)} value={email} />
         <button type="submit">Submit</button>
       </form>
 
@@ -139,7 +123,7 @@ const UserFunctionalComponent = () => {
       <div>
         <div>single_listening_result:</div>
         <div>{JSON.stringify(single_listening_result)}</div>
-      </div> 
+      </div>
     </>
   );
 };
