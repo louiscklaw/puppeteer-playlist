@@ -43,11 +43,12 @@ pushd react_host_cms/App
   scripts/dev.sh &
 popd
 
-# wait a while for servers to settle
-sleep 10
-
+echo 'wait for ports up'
 ./scripts/wait-for-it.sh -t 120 localhost:3000
 ./scripts/wait-for-it.sh -t 120 localhost:3001
 ./scripts/wait-for-it.sh -t 120 localhost:3002
+
+echo 'wait a while for servers to settle'
+sleep 30
 
 echo 'test setup done'
