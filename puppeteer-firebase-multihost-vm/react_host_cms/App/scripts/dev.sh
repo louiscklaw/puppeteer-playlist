@@ -2,7 +2,7 @@
 
 set -ex
 
-export PORT=3001
+export PORT=3002
 
 # yarn add @testing-library/jest-dom
 # yarn add @testing-library/react
