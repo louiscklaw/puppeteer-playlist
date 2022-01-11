@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <UserFunctionalComponent />
-      helloworld
+      react_host_cms
     </div>
   );
 }
