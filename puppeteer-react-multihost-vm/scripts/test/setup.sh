@@ -4,10 +4,12 @@ set -ex
 
 export BROWSER=none
 
-killall node || true
-killall node || true
-killall node || true
-killall node || true
+fuser -k -n tcp 3000 || true
+sleep 1
+fuser -k -n tcp 3001 || true
+sleep 1
+fuser -k -n tcp 3002 || true
+sleep 1
 
 # yarn --dev
 pushd react_host_admin/App
