@@ -25,9 +25,9 @@ popd
 #   bash scripts/build.sh
 # popd
 
-# pushd jobsdb-helloworld
-#   bash build.sh
-# popd
+pushd jobsdb-helloworld
+  bash build.sh
+popd
 
 # pushd youtube-live-viewer-count
 #   bash build.sh
