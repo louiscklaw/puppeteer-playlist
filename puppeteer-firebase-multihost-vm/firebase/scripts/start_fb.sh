@@ -2,26 +2,41 @@
 
 set -ex
 
-curl -sL https://firebase.tools | upgrade=true bash
+if [[ -z "${CI}" ]]; then
+  # when the build triggered by local dev
+  killall firebase || true
+  sleep 1
 
-killall firebase || true
-sleep 1
+  pushd functions
+    npm install
+  popd
 
-firebase --version
+  nice firebase --project react-tryout-6d7dd emulators:start
 
-pushd functions
-  npm install
-popd
+else
+  # when the build triggered by jenkins
+  curl -sL https://firebase.tools | upgrade=true bash
 
-nice firebase emulators:start &
+  killall firebase || true
+  sleep 1
 
-./scripts/wait-for-it.sh -t 120 localhost:9199
-./scripts/wait-for-it.sh -t 120 localhost:9099
-./scripts/wait-for-it.sh -t 120 localhost:9000
-./scripts/wait-for-it.sh -t 120 localhost:8080
-./scripts/wait-for-it.sh -t 120 localhost:5001
-./scripts/wait-for-it.sh -t 120 localhost:4000
+  firebase --version
 
-sleep 10
+  pushd functions
+    npm install
+  popd
 
-echo 'firebase setup done'
+  nice firebase --project react-tryout-6d7dd emulators:start &
+
+  # ./scripts/wait-for-it.sh -t 120 localhost:9199
+  ./scripts/wait-for-it.sh -t 120 localhost:9099
+  ./scripts/wait-for-it.sh -t 120 localhost:9000
+  ./scripts/wait-for-it.sh -t 120 localhost:8080
+  ./scripts/wait-for-it.sh -t 120 localhost:5001
+  # ./scripts/wait-for-it.sh -t 120 localhost:4000
+
+  sleep 10
+
+  echo 'firebase setup done'
+
+fi
