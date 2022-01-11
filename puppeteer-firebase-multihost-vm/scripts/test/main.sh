@@ -2,8 +2,9 @@
 
 set -ex
 
+scripts/test/clear.sh
+
 pushd firebase
-  scripts/clear.sh
   scripts/start_fb.sh
 popd
 

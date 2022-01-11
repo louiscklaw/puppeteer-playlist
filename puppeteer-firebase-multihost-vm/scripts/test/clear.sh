@@ -4,17 +4,22 @@ set -ex
 
 export BROWSER=none
 
-fuser -k -n tcp 3000 || true
-sleep 1
-fuser -k -n tcp 3001 || true
-sleep 1
-fuser -k -n tcp 3002 || true
-sleep 1
+pushd react_host_admin
+  scripts/clear.sh
+popd
+  
+pushd react_host_client
+  scripts/clear.sh
+popd
+  
+pushd react_host_cms
+  scripts/clear.sh
+popd
+  
 
 # kill firebase emulator
 pushd firebase
   scripts/clear.sh
-  
 popd
 
 
