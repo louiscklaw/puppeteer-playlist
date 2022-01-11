@@ -1,9 +1,17 @@
+import React from 'react';
+
+import UserFunctionalComponent from './components/UserFunctionalComponent';
+
 import './App.css';
+
+// import firestore from './firestore';
+// const db = firestore.firestore();
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">react_host_client</header>
+      <UserFunctionalComponent />
+      helloworld
     </div>
   );
 }
