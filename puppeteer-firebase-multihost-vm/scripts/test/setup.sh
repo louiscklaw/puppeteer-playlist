@@ -49,6 +49,5 @@ sleep 10
 ./scripts/wait-for-it.sh -t 120 localhost:3000
 ./scripts/wait-for-it.sh -t 120 localhost:3001
 ./scripts/wait-for-it.sh -t 120 localhost:3002
-./scripts/wait-for-it.sh -t 3 localhost:9999
 
 echo 'test setup done'
