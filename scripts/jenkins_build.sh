@@ -5,6 +5,10 @@ set -ex
 
 echo 'helloworld from jenkins'
 
+pushd puppeteer-firebase-multihost-vm
+  scripts/test/main.sh
+popd
+
 pushd puppeteer-react-multihost-vm
   scripts/test/main.sh
 popd
