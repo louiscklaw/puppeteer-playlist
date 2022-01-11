@@ -4,7 +4,7 @@ set -ex
 
 curl -sL https://firebase.tools | upgrade=true bash
 
-killall firebase java || true
+killall firebase || true
 sleep 1
 
 firebase --version

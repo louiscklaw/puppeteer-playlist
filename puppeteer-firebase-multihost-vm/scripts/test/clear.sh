@@ -12,7 +12,7 @@ fuser -k -n tcp 3002 || true
 sleep 1
 
 # kill firebase emulator
-killall firebase java || true
+killall firebase || true
 sleep 1
 
 
