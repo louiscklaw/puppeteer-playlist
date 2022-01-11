@@ -12,7 +12,7 @@ if [[ -z "${CI}" ]]; then
 
 else
   # when the build triggered by jenkins
-  curl -sL https://firebase.tools | upgrade=true bash
+  # curl -sL https://firebase.tools | upgrade=true bash
   firebase --version
 
   pushd functions
