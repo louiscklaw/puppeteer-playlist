@@ -13,9 +13,9 @@ pushd pagechange-alert-visual-diff-tryout
   bash scripts/build.sh
 popd
 
-# pushd pyppeteer-tryout
-#   bash test.sh
-# popd
+pushd pyppeteer-tryout
+  bash test.sh
+popd
 
 # pushd pyppeteer-page-object-tryout
 #   bash test.sh
