@@ -20,7 +20,7 @@ describe('helloworld', () => {
   );
 
   beforeAll(async () => {
-    client_browser = await puppeteer.launch(puppeteer_options_mobile);
+    client_browser = await puppeteer.launch({ ...puppeteer_options_mobile, headless: true });
     client_page = await client_browser.newPage();
     await client_page.screenshot({ path: 'client_helloworld.png' });
   });
