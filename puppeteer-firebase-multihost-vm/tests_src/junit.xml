@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="9" failures="0" errors="0" time="4.379">
-  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:21:58" time="2.639" tests="1">
-    <testcase classname="helloworld Login" name="helloworld Login" time="1.456">
+<testsuites name="jest tests" tests="9" failures="1" errors="0" time="4.709">
+  <testsuite name="helloworld" errors="0" failures="1" skipped="0" timestamp="2022-01-12T02:30:04" time="2.549" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="0.833">
+      <failure>Error: Expected image to match or be a close match to snapshot but was 30.10443349753695% different from snapshot (91668 differing pixels).
+See diff for details: /home/logic/_workspace/puppeteer-playlist/puppeteer-firebase-multihost-vm/tests_src/e2e_tests/react_host_client/helloworld/__image_snapshots__/__diff_output__/index-test-js-helloworld-login-1-diff.png
+    at assertScreenShotPct (/home/logic/_workspace/puppeteer-playlist/puppeteer-firebase-multihost-vm/tests_src/utils/assertScreenShot.js:20:36)
+    at Object.&lt;anonymous&gt; (/home/logic/_workspace/puppeteer-playlist/puppeteer-firebase-multihost-vm/tests_src/e2e_tests/react_host_client/helloworld/index.test.js:17:7)</failure>
     </testcase>
   </testsuite>
-  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:21:58" time="2.775" tests="1">
-    <testcase classname="helloworld Login" name="helloworld Login" time="1.508">
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:30:04" time="3.066" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="1.397">
     </testcase>
   </testsuite>
-  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:21:58" time="2.874" tests="1">
-    <testcase classname="helloworld Login" name="helloworld Login" time="1.645">
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:30:04" time="3.222" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="1.556">
     </testcase>
   </testsuite>
-  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:21:58" time="2.877" tests="1">
-    <testcase classname="helloworld Login" name="helloworld Login" time="1.65">
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:30:04" time="3.358" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="1.656">
     </testcase>
   </testsuite>
-  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:21:58" time="2.925" tests="1">
-    <testcase classname="helloworld Login" name="helloworld Login" time="1.66">
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:30:04" time="3.373" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="1.689">
     </testcase>
   </testsuite>
-  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:21:58" time="2.981" tests="1">
-    <testcase classname="helloworld Login" name="helloworld Login" time="1.715">
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:30:04" time="3.382" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="1.67">
     </testcase>
   </testsuite>
-  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:21:58" time="3.296" tests="1">
-    <testcase classname="helloworld Login" name="helloworld Login" time="2.088">
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:30:04" time="3.408" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="1.682">
     </testcase>
   </testsuite>
-  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:22:00" time="1.358" tests="1">
-    <testcase classname="helloworld Login" name="helloworld Login" time="0.893">
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:30:06" time="1.658" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="0.922">
     </testcase>
   </testsuite>
-  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:22:01" time="1.321" tests="1">
-    <testcase classname="helloworld Login" name="helloworld Login" time="0.851">
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:30:07" time="1.3" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="0.874">
     </testcase>
   </testsuite>
 </testsuites>
