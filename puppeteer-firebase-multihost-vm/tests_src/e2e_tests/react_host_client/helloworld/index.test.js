@@ -9,9 +9,9 @@ const ACTUAL_SCREENSHOT_PATH = `${CASE_HOME}/actual`;
 const { puppeteer_options_mobile } = require(`${UTILS_HOME}/puppeteer_options.js`);
 const { assertScreenShotPct } = require(`${UTILS_HOME}/assertScreenShot`);
 
-describe('helloworld', () => {
+describe('react_host_client', () => {
   test(
-    'Login',
+    'helloworld',
     async () => {
       await client_page.goto('http://www.example.com', { waitUntil: 'domcontentloaded' });
       await assertScreenShotPct(client_page, 0.02, ACTUAL_SCREENSHOT_PATH);
