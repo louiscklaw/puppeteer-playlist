@@ -4,11 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "int_test": "mocha --recursive integration_tests",
-    "e2e_test": "jest e2e_tests",
-    "vis_test": "mocha --recursive visual_regression_tests",
-    "jest_dev": "jest --watchAll e2e_tests"
+    "test": "jest --ci --reporters=default --reporters=jest-junit"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +12,7 @@
   "devDependencies": {
     "jest": "^27.4.7",
     "jest-image-snapshot": "^4.5.1",
+    "jest-junit": "^13.0.0",
     "mocha": "^9.1.3",
     "puppeteer": "^13.0.1"
   }

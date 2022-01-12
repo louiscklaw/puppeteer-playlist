@@ -2,6 +2,8 @@
 
 set -ex
 
+export CI=1
+
 pushd react_host_admin/App
   yarn test
 popd
@@ -16,10 +18,5 @@ popd
 
 
 pushd tests_src
-  yarn run int_test
-
-  # test by jest
-  yarn run e2e_test
-  
-  yarn run vis_test
+  yarn test
 popd

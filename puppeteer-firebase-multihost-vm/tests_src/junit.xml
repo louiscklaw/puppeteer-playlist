@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="3" failures="0" errors="0" time="2.535">
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T01:47:10" time="2.187" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="1.064">
+    </testcase>
+  </testsuite>
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T01:47:10" time="2.195" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="1.063">
+    </testcase>
+  </testsuite>
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T01:47:10" time="2.199" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="1.066">
+    </testcase>
+  </testsuite>
+</testsuites>
