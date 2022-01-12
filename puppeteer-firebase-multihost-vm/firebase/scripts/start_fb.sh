@@ -4,7 +4,7 @@ set -ex
 
 if [[ -z "${CI}" ]]; then
   # when the build triggered by local dev
-  # no need to install firebase tools every time
+  echo 'no need to install firebase tools every time'
 else
   # when the build triggered by jenkins
   # curl -sL https://firebase.tools | upgrade=true bash
