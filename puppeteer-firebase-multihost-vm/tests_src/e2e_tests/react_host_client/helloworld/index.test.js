@@ -9,7 +9,7 @@ const ACTUAL_SCREENSHOT_PATH = `${CASE_HOME}/actual`;
 const { puppeteer_options_mobile } = require(`${UTILS_HOME}/puppeteer_options.js`);
 const { assertScreenShotPct } = require(`${UTILS_HOME}/assertScreenShot`);
 
-describe('react_host_client', () => {
+describe('e2e_tests', () => {
   test(
     'helloworld',
     async () => {
