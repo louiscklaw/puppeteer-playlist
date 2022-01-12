@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="14" failures="0" errors="0" time="9.533">
-  <testsuite name="e2e_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:43:18" time="2.856" tests="1">
-    <testcase classname="e2e_tests helloworld" name="e2e_tests helloworld" time="1.364">
+<testsuites name="jest tests" tests="14" failures="0" errors="0" time="4.991">
+  <testsuite name="visual_regression_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:52:24" time="2.516" tests="1">
+    <testcase classname="visual_regression_tests chrome_mobile_helloworld" name="visual_regression_tests chrome_mobile_helloworld" time="0.777">
     </testcase>
   </testsuite>
-  <testsuite name="integration_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:43:18" time="3.047" tests="1">
-    <testcase classname="integration_tests helloworld" name="integration_tests helloworld" time="1.46">
+  <testsuite name="visual_regression_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:52:24" time="2.68" tests="1">
+    <testcase classname="visual_regression_tests chrome_mobile_helloworld" name="visual_regression_tests chrome_mobile_helloworld" time="0.904">
     </testcase>
   </testsuite>
-  <testsuite name="e2e_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:43:18" time="3.077" tests="1">
-    <testcase classname="e2e_tests helloworld" name="e2e_tests helloworld" time="1.577">
+  <testsuite name="integration_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:52:24" time="2.772" tests="1">
+    <testcase classname="integration_tests helloworld" name="integration_tests helloworld" time="1.029">
     </testcase>
   </testsuite>
-  <testsuite name="e2e_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:43:18" time="3.135" tests="1">
-    <testcase classname="e2e_tests helloworld" name="e2e_tests helloworld" time="1.554">
+  <testsuite name="integration_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:52:24" time="2.77" tests="1">
+    <testcase classname="integration_tests helloworld" name="integration_tests helloworld" time="1.086">
     </testcase>
   </testsuite>
-  <testsuite name="integration_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:43:18" time="3.162" tests="1">
-    <testcase classname="integration_tests helloworld" name="integration_tests helloworld" time="1.582">
+  <testsuite name="e2e_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:52:24" time="2.751" tests="1">
+    <testcase classname="e2e_tests helloworld" name="e2e_tests helloworld" time="1.06">
     </testcase>
   </testsuite>
-  <testsuite name="integration_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:43:18" time="3.272" tests="1">
-    <testcase classname="integration_tests helloworld" name="integration_tests helloworld" time="1.636">
+  <testsuite name="visual_regression_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:52:24" time="3.553" tests="2">
+    <testcase classname="visual_regression_tests example_com" name="visual_regression_tests example_com" time="0.97">
+    </testcase>
+    <testcase classname="visual_regression_tests chrome_mobile_helloworld" name="visual_regression_tests chrome_mobile_helloworld" time="0.847">
     </testcase>
   </testsuite>
-  <testsuite name="visual_regression_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:43:21" time="2.478" tests="1">
-    <testcase classname="visual_regression_tests helloworld" name="visual_regression_tests helloworld" time="1.352">
+  <testsuite name="e2e_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:52:26" time="1.676" tests="1">
+    <testcase classname="e2e_tests helloworld" name="e2e_tests helloworld" time="0.986">
     </testcase>
   </testsuite>
-  <testsuite name="visual_regression_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:43:21" time="2.624" tests="1">
-    <testcase classname="visual_regression_tests helloworld" name="visual_regression_tests helloworld" time="1.44">
+  <testsuite name="e2e_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:52:27" time="1.523" tests="1">
+    <testcase classname="e2e_tests helloworld" name="e2e_tests helloworld" time="0.901">
     </testcase>
   </testsuite>
-  <testsuite name="visual_regression_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:43:18" time="6.441" tests="2">
-    <testcase classname="visual_regression_tests example_com" name="visual_regression_tests example_com" time="1.657">
-    </testcase>
-    <testcase classname="visual_regression_tests chrome_mobile_helloworld" name="visual_regression_tests chrome_mobile_helloworld" time="3.144">
+  <testsuite name="integration_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:52:26" time="1.655" tests="1">
+    <testcase classname="integration_tests helloworld" name="integration_tests helloworld" time="0.93">
     </testcase>
   </testsuite>
-  <testsuite name="visual_regression_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:43:21" time="3.653" tests="1">
-    <testcase classname="visual_regression_tests chrome_mobile_helloworld" name="visual_regression_tests chrome_mobile_helloworld" time="2.618">
+  <testsuite name="visual_regression_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:52:27" time="1.505" tests="1">
+    <testcase classname="visual_regression_tests helloworld" name="visual_regression_tests helloworld" time="0.913">
     </testcase>
   </testsuite>
-  <testsuite name="visual_regression_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:43:21" time="4.036" tests="1">
-    <testcase classname="visual_regression_tests chrome_mobile_helloworld" name="visual_regression_tests chrome_mobile_helloworld" time="2.573">
+  <testsuite name="visual_regression_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:52:27" time="1.579" tests="1">
+    <testcase classname="visual_regression_tests helloworld" name="visual_regression_tests helloworld" time="0.977">
     </testcase>
   </testsuite>
-  <testsuite name="visual_regression_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:43:21" time="6.045" tests="2">
-    <testcase classname="visual_regression_tests chrome_tablet_helloworld" name="visual_regression_tests chrome_tablet_helloworld" time="2.621">
+  <testsuite name="visual_regression_tests" errors="0" failures="0" skipped="0" timestamp="2022-01-12T06:52:24" time="4.658" tests="2">
+    <testcase classname="visual_regression_tests chrome_tablet_helloworld" name="visual_regression_tests chrome_tablet_helloworld" time="1.39">
     </testcase>
-    <testcase classname="visual_regression_tests chrome_tablet_helloworld" name="visual_regression_tests chrome_tablet_helloworld" time="1.271">
+    <testcase classname="visual_regression_tests chrome_tablet_helloworld" name="visual_regression_tests chrome_tablet_helloworld" time="1.031">
     </testcase>
   </testsuite>
 </testsuites>
