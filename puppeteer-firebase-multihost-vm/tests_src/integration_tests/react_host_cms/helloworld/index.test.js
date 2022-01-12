@@ -13,7 +13,7 @@ describe('helloworld', () => {
   test(
     'Login',
     async () => {
-      await client_page.goto('http://www.google.com', { waitUntil: 'domcontentloaded' });
+      await client_page.goto('http://www.example.com', { waitUntil: 'domcontentloaded' });
       await assertScreenShotPct(client_page, 0.02, ACTUAL_SCREENSHOT_PATH);
     },
     30 * 1000
