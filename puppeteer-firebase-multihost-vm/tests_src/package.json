@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --ci --reporters=default --reporters=jest-junit"
+    "test": "jest --ci --reporters=default --reporters=jest-junit",
+    "int_test": "mocha --recursive integration_tests",
+    "e2e_test": "jest --ci --reporters=default --reporters=jest-junit",
+    "vis_test": "mocha --recursive visual_regression_tests",
+    "jest_dev": "jest --watchAll e2e_tests"
   },
   "keywords": [],
   "author": "",
