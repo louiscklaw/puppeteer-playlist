@@ -1,15 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="3" failures="0" errors="0" time="2.535">
-  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T01:47:10" time="2.187" tests="1">
-    <testcase classname="helloworld Login" name="helloworld Login" time="1.064">
+<testsuites name="jest tests" tests="9" failures="0" errors="0" time="4.379">
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:21:58" time="2.639" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="1.456">
     </testcase>
   </testsuite>
-  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T01:47:10" time="2.195" tests="1">
-    <testcase classname="helloworld Login" name="helloworld Login" time="1.063">
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:21:58" time="2.775" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="1.508">
     </testcase>
   </testsuite>
-  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T01:47:10" time="2.199" tests="1">
-    <testcase classname="helloworld Login" name="helloworld Login" time="1.066">
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:21:58" time="2.874" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="1.645">
+    </testcase>
+  </testsuite>
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:21:58" time="2.877" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="1.65">
+    </testcase>
+  </testsuite>
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:21:58" time="2.925" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="1.66">
+    </testcase>
+  </testsuite>
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:21:58" time="2.981" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="1.715">
+    </testcase>
+  </testsuite>
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:21:58" time="3.296" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="2.088">
+    </testcase>
+  </testsuite>
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:22:00" time="1.358" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="0.893">
+    </testcase>
+  </testsuite>
+  <testsuite name="helloworld" errors="0" failures="0" skipped="0" timestamp="2022-01-12T02:22:01" time="1.321" tests="1">
+    <testcase classname="helloworld Login" name="helloworld Login" time="0.851">
     </testcase>
   </testsuite>
 </testsuites>

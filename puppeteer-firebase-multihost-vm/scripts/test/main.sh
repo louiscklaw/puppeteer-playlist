@@ -15,9 +15,7 @@ pushd tests_src
 popd
 
 pushd tests_src
-  yarn run int_test
-  yarn run e2e_test
-  yarn run vis_test
+  yarn run test
 popd
 
 echo 'test done'
