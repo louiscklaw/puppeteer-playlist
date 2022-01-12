@@ -24,3 +24,6 @@ echo 'test done'
 
 scripts/test/clear.sh
 
+# if test have a clear end, remove temp actual screen shot, otherwise keep it for debug
+rm -rf **/actual/*.png
+rm -rf **/__diff_output__
