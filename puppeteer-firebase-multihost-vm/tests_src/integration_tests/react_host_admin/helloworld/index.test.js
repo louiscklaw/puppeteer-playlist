@@ -1,48 +1,31 @@
-const assert = require('assert');
-const { dirname } = require('path');
 const puppeteer = require('puppeteer');
 
-const TEST_HOME = __dirname;
+const CASE_HOME = __dirname;
+const TEST_HOME = `${CASE_HOME}/../..`;
+const SRC_HOME = `${TEST_HOME}/..`;
+const UTILS_HOME = `${SRC_HOME}/utils`;
+const ACTUAL_SCREENSHOT_PATH = `${CASE_HOME}/actual`;
 
-let browser;
-let page;
+const { puppeteer_options_mobile } = require(`${UTILS_HOME}/puppeteer_options.js`);
+const { assertScreenShotPct } = require(`${UTILS_HOME}/assertScreenShot`);
 
-before(async () => {
-  browser = await puppeteer.launch({
-    args: [
-      // Required for Docker version of Puppeteer
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      // This will write shared memory files into /tmp instead of /dev/shm,
-      // because Docker’s default for /dev/shm is 64MB
-      '--disable-dev-shm-usage',
-    ],
+describe('helloworld', () => {
+  test(
+    'Login',
+    async () => {
+      await client_page.goto('http://www.google.com', { waitUntil: 'domcontentloaded' });
+      await assertScreenShotPct(client_page, 0.02, ACTUAL_SCREENSHOT_PATH);
+    },
+    30 * 1000
+  );
+
+  beforeAll(async () => {
+    client_browser = await puppeteer.launch({ ...puppeteer_options_mobile, headless: true });
+    client_page = await client_browser.newPage();
+    await client_page.screenshot({ path: 'client_helloworld.png' });
   });
 
-  const browserVersion = await browser.version();
-  console.log(`Started ${browserVersion}`);
+  afterAll(async () => {
+    await client_browser.close();
+  });
 });
-
-beforeEach(async () => {
-  page = await browser.newPage();
-});
-
-afterEach(async () => {
-  await page.close();
-});
-
-after(async () => {
-  await browser.close();
-});
-
-describe(
-  'react_host_admin helloworld',
-  () => {
-    it('renders', async () => {
-      const response = await page.goto('http://localhost:3000/');
-      assert(response.ok());
-      await page.screenshot({ path: `${TEST_HOME}/app.png` });
-    });
-  },
-  30 * 1000
-);
