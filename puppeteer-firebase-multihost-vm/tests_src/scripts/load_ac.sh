@@ -11,16 +11,7 @@ set -e
 export FIRESTORE_EMULATOR_HOST="localhost:8080"
 export FIREBASE_AUTH_EMULATOR_HOST="localhost:9099"
 
-firestore-clear --yes --nodePath helloworld &
-
-wait
-
-pushd ./db_testing/jsons
-  pushd helloworld
-    for filename in *.json; do
-        [ -e "$filename" ] || continue
-        firestore-import -y --nodePath helloworld --backupFile $filename &
-    done
-  wait
-  popd
+pushd ./db_testing/accounts
+  node ./del.js
+  node ./add.js
 popd
