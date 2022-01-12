@@ -9,14 +9,17 @@ scripts/test/clear.sh
 
 pushd firebase
   scripts/start_fb.sh
-  scripts/load_ac.sh
-  scripts/load_db.sh
 popd
 
 scripts/test/setup.sh
 
 pushd tests_src
   yarn --dev
+popd
+
+pushd tests_src
+  scripts/load_ac.sh
+  scripts/load_db.sh
 popd
 
 pushd tests_src
