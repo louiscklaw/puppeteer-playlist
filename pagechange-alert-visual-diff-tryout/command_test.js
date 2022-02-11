@@ -2,7 +2,7 @@ const child_process=require('child_process');
 
 let page_name = 'page name'
 let text_to_send=`page changed ${page_name}`
-let webhook='https://hooks.slack.com/services/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'
+let webhook='https://hooks.slack.com/services/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'
 let username='pagechange-alert-visual-diff-tryout'
 let channel='#_debug'
 
