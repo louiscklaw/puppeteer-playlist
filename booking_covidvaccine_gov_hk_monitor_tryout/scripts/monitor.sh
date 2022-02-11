@@ -2,6 +2,7 @@
 
 set -x
 
+source .env
 
 while true; do
   scripts/build.sh
