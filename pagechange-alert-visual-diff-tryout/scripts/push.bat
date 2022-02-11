@@ -1,6 +1,6 @@
 git add .
 
-git commit -m"update puppeteer-helloworld-tryout,"
+git commit -m"update pagechange-alert-visual-diff-tryout,"
 
 git pull
 
