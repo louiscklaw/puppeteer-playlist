@@ -10,10 +10,10 @@ let height=302;
 let alarm_threshold = 1;
 
 
-let page_name = 'pagechange-alert-visual-diff-tryout'
+let page_name = 'booking_covidvaccine_gov_hk_monitor_tryout'
 let text_to_send=`page changed ${page_name}`
 let webhook=SLACK_WEBHOOK
-let username='pagechange-alert-visual-diff-tryout'
+let username='booking_covidvaccine_gov_hk_monitor_tryout'
 let channel='#_debug'
 
 let send_slack_msg_command_sample=`curl -X POST --data-urlencode 'payload={
