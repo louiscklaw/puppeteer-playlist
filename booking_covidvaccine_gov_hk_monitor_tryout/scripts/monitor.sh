@@ -6,5 +6,5 @@ set -x
 while true; do
   scripts/build.sh
 
-  sleep 60
+  sleep 180
 done

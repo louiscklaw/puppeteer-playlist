@@ -21,7 +21,7 @@ let send_slack_msg_command_sample=`curl -X POST --data-urlencode 'payload={
   "username": "${username}",
   "text": "${text_to_send}" }' ${webhook}`;
 
-let send_slack_msg_command = `curl https://hooks.slack.com/services/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 -X POST -H 'Content-type: application/json' --data '{"text":"https://booking.covidvaccine.gov.hk/centre/index_tc.html changed!"}'`
+let send_slack_msg_command = `curl https://hooks.slack.com/services/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 -X POST -H 'Content-type: application/json' --data '{"text":"https://booking.covidvaccine.gov.hk/centre/index_tc.html changed!"}'`
 
 let monitor_url = 'https://booking.covidvaccine.gov.hk/centre/index_tc.html'
 
@@ -54,13 +54,14 @@ let send_slack_still_alive_msg_command=`curl -X POST --data-urlencode 'payload={
   const current_example_png = PNG.sync.read( fs.readFileSync( 'current_screenshot.png' ) );
 
   let matching_result = pixelmatch( example_png.data, current_example_png.data, diff.data, 1920, 1080 * 7, {
-    threshold: 0.1
+    threshold: 0.2
   } );
 
   fs.writeFileSync( 'difference.png', PNG.sync.write( diff ) );
   console.log(matching_result)
 
   if (matching_result > alarm_threshold){
+    console.log('send alert message')
     child_process.execSync(send_slack_msg_command);
   }else{
     child_process.execSync('hostname');
