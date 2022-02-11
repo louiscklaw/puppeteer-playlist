@@ -12,6 +12,6 @@
   "dependencies": {
     "pixelmatch": "^5.2.1",
     "pngjs": "^5.0.0",
-    "puppeteer": "^3.0.4"
+    "puppeteer": "^13.3.1"
   }
 }

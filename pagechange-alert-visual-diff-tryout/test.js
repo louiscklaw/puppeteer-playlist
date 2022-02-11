@@ -16,10 +16,12 @@ let webhook=SLACK_WEBHOOK
 let username='pagechange-alert-visual-diff-tryout'
 let channel='#_debug'
 
-let send_slack_msg_command=`curl -X POST --data-urlencode 'payload={
+let send_slack_msg_command_sample=`curl -X POST --data-urlencode 'payload={
   "channel": "#${channel}",
   "username": "${username}",
   "text": "${text_to_send}" }' ${webhook}`;
+
+  let send_slack_msg_command = `curl https://hooks.slack.com/services/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 -X POST -H 'Content-type: application/json' --data '{"text":"pagechange-alert-visual-diff-tryout changed!"}'`
 
 let send_slack_still_alive_msg_command=`curl -X POST --data-urlencode 'payload={
   "channel": "#${channel}",
@@ -36,9 +38,8 @@ let send_slack_still_alive_msg_command=`curl -X POST --data-urlencode 'payload={
   });
   const page = await browser.newPage();
   await page.goto( 'https://www.youtube.com/channel/UCUEJok-GiWaGlv5nIPwk-GQ' );
-  await page.screenshot( {
-    path: 'current_youtube.png'
-  } );
+  await page.waitForTimeout(5 * 1000)
+  await page.screenshot( { path: 'current_youtube.png'  } );
 
   await browser.close();
 
