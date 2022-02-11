@@ -30,6 +30,14 @@ let send_slack_still_alive_msg_command=`curl -X POST --data-urlencode 'payload={
   "username": "${username}",
   "text": "still alive" }' ${webhook}`;
 
+
+  let ENV_SLACK_HOOK_URL = process.env.SLACK_HOOK_URL
+
+  let send_slack_msg_helloworld = `curl ${ENV_SLACK_HOOK_URL} -X POST -H 'Content-type: application/json' --data '{"text":"send_slack_msg_helloworld"}'`
+  let send_slack_msg_command = `curl ${ENV_SLACK_HOOK_URL} -X POST -H 'Content-type: application/json' --data '{"text":"https://booking.covidvaccine.gov.hk/centre/index_tc.html changed!"}'`
+
+  child_process.execSync(send_slack_msg_helloworld);
+
 ( async () => {
   const browser = await puppeteer.launch({
     defaultViewport:{
