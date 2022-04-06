@@ -1,0 +1,12 @@
+{
+  "wF5SRAl2k5G1SD7GiRda_food_menu_ads": {
+    "ad_create_time": { "__datatype__": "timestamp", "value": { "_seconds": 1614308593, "_nanoseconds": 899000000 } },
+    "rest_id": "wF5SRAl2k5G1SD7GiRda",
+    "is_enabled": false,
+    "restaurant_service_tags": "restaurant_service_tags",
+    "ad_type": "AD_TYPE_MENY_REST_ADVERTISEMENT",
+    "image_urls": ["https://cdn.jsdelivr.net/gh/louiscklaw/test-resources@master/photo-1493770348161-369560ae357d.jpeg", "", ""],
+    "title": "REST_AD_HELLOWORLD1",
+    "__collections__": {}
+  }
+}

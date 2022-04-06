@@ -11,9 +11,18 @@ const { assertScreenShotPct } = require(`${UTILS_HOME}/assertScreenShot`);
 
 describe('visual_regression_tests', () => {
   test(
-    'helloworld',
+    'example_com',
     async () => {
       await client_page.goto('http://www.example.com', { waitUntil: 'domcontentloaded' });
+      await assertScreenShotPct(client_page, 0.02, ACTUAL_SCREENSHOT_PATH);
+    },
+    30 * 1000
+  );
+
+  test(
+    'chrome_mobile_helloworld',
+    async () => {
+      await client_page.goto('http://localhost:3002', { waitUntil: 'domcontentloaded' });
       await assertScreenShotPct(client_page, 0.02, ACTUAL_SCREENSHOT_PATH);
     },
     30 * 1000

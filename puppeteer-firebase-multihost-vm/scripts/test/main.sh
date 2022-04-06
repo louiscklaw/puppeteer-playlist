@@ -18,6 +18,11 @@ pushd tests_src
 popd
 
 pushd tests_src
+  scripts/load_ac.sh
+  scripts/load_db.sh
+popd
+
+pushd tests_src
   yarn test
 popd
 

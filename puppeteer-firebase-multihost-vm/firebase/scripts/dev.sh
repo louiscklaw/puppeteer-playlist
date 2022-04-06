@@ -6,6 +6,6 @@ pushd functions
   npm install
 popd
 
-nice firebase --project react-tryout-6d7dd emulators:start
+nice firebase --project helloworld-b29f6 emulators:start
 
 echo 'firebase setup done'
