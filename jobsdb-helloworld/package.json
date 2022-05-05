@@ -6,12 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "yarn --dev && node test.js",
-    "gitUpdate": "git add . && git commit -m'update jobsdb-helloworld,' && git pull && git push"
+    "gitUpdate": "git add . && git commit -m'update jobsdb-helloworld,' && git pull && git push",
+    "build": "node test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "puppeteer": "^3.0.4"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-run-command": "^0.0.10"
   }
 }
