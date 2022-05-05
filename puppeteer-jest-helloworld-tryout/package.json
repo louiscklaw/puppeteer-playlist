@@ -9,15 +9,21 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "node test.js",
     "test": "react-scripts test --env=jsdom",
     "test:e2eTest": "jest -c e2e-test/jest.config.js",
     "test:e2eTestWithWatch": "jest -c e2e-test/jest.config.js --watch",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "gitUpdate": "git add . && git commit -m'update puppeteer-jest-helloworld-tryout,' && git pull && git push",
+    "dev": "yarn --dev && yarn gulp",
+    "reYarn": "rm -rf node_modules && yarn --dev && yarn gulp"
   },
   "devDependencies": {
     "jest-puppeteer": "^5.0.3",
-    "puppeteer": "^9.1.1"
+    "chalk": "4",
+    "gulp": "^4.0.2",
+    "gulp-run-command": "^0.0.10",
+    "puppeteer": "^13.7.0"
   },
   "browserslist": {
     "development": [
