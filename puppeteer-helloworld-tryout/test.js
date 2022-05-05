@@ -1,7 +1,7 @@
-// const puppeteer = require('puppeteer');
-// const chalk = require('chalk');
-import puppeteer from 'puppeteer';
-import chalk from 'chalk';
+const puppeteer = require('puppeteer');
+const chalk = require('chalk');
+// import puppeteer from 'puppeteer';
+// import chalk from 'chalk';
 
 const enablePageConsoleLog = (log_prefix, page) => {
   page

@@ -1,7 +1,22 @@
 {
-  "type": "module",
+  "name": "puppeteer-helloworld-tryout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gitUpdate": "git add . && git commit -m'update pixelmatch-helloworld,' && git pull && git push",
+    "build": "node test.js",
+    "dev": "yarn --dev && yarn gulp",
+    "reYarn": "rm -rf node_modules && yarn --dev && yarn gulp"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "chalk": "^5.0.0",
-    "puppeteer": "^10.1.0"
+    "chalk": "4",
+    "gulp": "^4.0.2",
+    "gulp-run-command": "^0.0.10",
+    "puppeteer": "*"
   }
 }
