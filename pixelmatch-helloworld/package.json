@@ -4,12 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gitUpdate": "git add . && git commit -m'update pixelmatch-helloworld,' && git pull && git push",
+    "build": "node test.js",
+    "dev": "yarn --dev && yarn gulp",
+    "reYarn": "rm -rf node_modules && yarn --dev && yarn gulp"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "pixelmatch": "^5.2.0"
+    "pixelmatch": "*",
+    "puppeteer": "*"
+  },
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-run-command": "*"
   }
 }
