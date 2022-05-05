@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "gulp": "^4.0.2",
     "puppeteer": "^10.1.0"
+  },
+  "scripts": {
+    "gitUpdate": "git add . && git commit -m'update puppeteer-network-throttling-tryout,' && git pull && git push",
+    "build": "node test.js",
+    "dev": "yarn --dev && yarn gulp",
+    "reYarn": "rm -rf node_modules && yarn --dev && yarn gulp"
   }
 }
