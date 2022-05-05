@@ -4,7 +4,9 @@
   "description": "",
   "main": "test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "yarn --dev && node test.js",
+    "gitUpdate": "git add . && git commit -m'update jobsdb-helloworld,' && git pull && git push"
   },
   "keywords": [],
   "author": "",
