@@ -12,7 +12,7 @@ gulp.task('clean', run(CLEAN_CMD));
 gulp.task('build', gulp.series('clean', run(BUILD_CMD, { ignoreErrors: true })));
 
 gulp.task('watch', () => {
-  gulp.watch(['js/*.js', '!js/*.min.js'], gulp.series('build'));
+  gulp.watch(['./*.js', '!js/*.min.js'], gulp.series('build'));
 });
 
 gulp.task('default', gulp.series('watch'));

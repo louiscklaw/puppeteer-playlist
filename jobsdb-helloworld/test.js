@@ -1,6 +1,8 @@
 const puppeteer = require('puppeteer');
 
 (async () => {
+  console.log('start');
+
   const browser = await puppeteer.launch({
     defaultViewport: {
       width: 1920,
@@ -16,6 +18,5 @@ const puppeteer = require('puppeteer');
   });
 
   await browser.close();
+  console.log('done');
 })();
-
-console.log('helloworld');
