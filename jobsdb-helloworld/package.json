@@ -5,15 +5,16 @@
   "main": "test.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "yarn --dev && node test.js",
     "gitUpdate": "git add . && git commit -m'update jobsdb-helloworld,' && git pull && git push",
-    "build": "node test.js"
+    "build": "node test.js",
+    "dev": "yarn --dev && yarn gulp",
+    "reYarn": "rm -rf node_modules && yarn --dev && yarn gulp"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "puppeteer": "^3.0.4"
+    "puppeteer": "*"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
