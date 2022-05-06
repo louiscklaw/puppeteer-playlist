@@ -1,0 +1,17 @@
+{
+  "name": "headless-chrome-crawler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node index.js",
+    "gitUpdate": "git add . && git commit -m'update headless-chome-crawler,' && git pull && git push"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "headless-chrome-crawler": "^1.8.0"
+  }
+}
