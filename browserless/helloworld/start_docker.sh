@@ -26,4 +26,5 @@ docker network prune -f
 
 
 docker run -p 3000:3000 --restart always -d \
+  -e "CONNECTION_TIMEOUT=600000"
   --name browserless-helloworld browserless/chrome
