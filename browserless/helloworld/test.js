@@ -12,7 +12,7 @@ app.get('/get_validation_engineer', async (req, res) => {
   const page = await browser.newPage();
   await page.setDefaultNavigationTimeout(0);
 
-  await page.goto('https://hk.jobsdb.com/hk/search-jobs/validation/1', { waitUntil: 'networkidle0' });
+  await page.goto('https://hk.jobsdb.com/hk/search-jobs/validation/1', { waitUntil: ['load', 'networkidle0', 'networkidle2'] });
 
   var data = await page.screenshot({ fullPage: true });
 
@@ -21,12 +21,16 @@ app.get('/get_validation_engineer', async (req, res) => {
 });
 
 app.get('/capture_youtube_com', async (req, res) => {
-  const browser = await puppeteer.connect({ browserWSEndpoint: 'ws://192.168.10.52:3000' });
+  const BROWSER_WEBSOCKET_URL = 'ws://192.168.10.52:3000';
+  const browser = await puppeteer.connect({
+    browserWSEndpoint: BROWSER_WEBSOCKET_URL,
+    ignoreHTTPSErrors: true,
+  });
 
   const page = await browser.newPage();
   await page.setDefaultNavigationTimeout(0);
 
-  await page.goto('http://www.youtube.com/', { waitUntil: 'networkidle0' });
+  await page.goto('http://www.youtube.com/', { waitUntil: ['load', 'networkidle0', 'networkidle2'] });
 
   var data = await page.screenshot({ fullPage: true });
 
