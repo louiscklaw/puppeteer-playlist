@@ -77,8 +77,8 @@ app.get('/capture_carousell/javascript/json_content', async (req, res) => {
 
   var data = await page.screenshot({ fullPage: true });
 
-  // res.send(await page.title());
-  return res.end(data, 'binary');
+  res.send({ title: await page.title() });
+  // return res.end(data, 'binary');
 });
 
 app.get('/capture_youtube_com', async (req, res) => {
