@@ -17,7 +17,8 @@ router.get('/helloworld', function (req, res) {
 
 router.get('/helloworld_get_params', function (req, res) {
   var { params } = req;
-  res.json(test_json);
+
+  res.json({ hello: 'world', params });
 });
 
 router.get('/get_title', async (req, res) => {
