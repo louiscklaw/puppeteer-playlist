@@ -2,7 +2,7 @@ const express = require('express');
 const puppeteer = require('puppeteer-core');
 const fs = require('fs');
 
-const BROWSER_WEBSOCKET_URL = 'ws://192.168.10.52:3000';
+const BROWSER_WEBSOCKET_URL = 'ws://127.0.0.1:3000';
 
 const app = express();
 
@@ -43,7 +43,7 @@ app.get('/capture_youtube_com', async (req, res) => {
 });
 
 app.get('/capture_example_com', async (req, res) => {
-  const browser = await puppeteer.connect({ browserWSEndpoint: 'ws://192.168.10.52:3000' });
+  const browser = await puppeteer.connect({ browserWSEndpoint: BROWSER_WEBSOCKET_URL });
 
   const page = await browser.newPage();
   await page.setDefaultNavigationTimeout(0);
@@ -57,7 +57,7 @@ app.get('/capture_example_com', async (req, res) => {
 });
 
 app.get('/get_jobsdb', async (req, res) => {
-  const browser = await puppeteer.connect({ browserWSEndpoint: 'ws://192.168.10.52:3000' });
+  const browser = await puppeteer.connect({ browserWSEndpoint: BROWSER_WEBSOCKET_URL });
 
   const page = await browser.newPage();
   await page.setViewport({ width: 1920, height: 1080 });
@@ -71,7 +71,7 @@ app.get('/get_jobsdb', async (req, res) => {
 
 app.get('/get_title', async (req, res) => {
   var data = '';
-  const browser = await puppeteer.connect({ browserWSEndpoint: 'ws://192.168.10.52:3000' });
+  const browser = await puppeteer.connect({ browserWSEndpoint: BROWSER_WEBSOCKET_URL });
   const page = await browser.newPage();
   await page.goto('http://www.example.com/');
 
