@@ -25,7 +25,17 @@ docker volume prune -f
 docker network prune -f
 
 
+  # -e "DEFAULT_IGNORE_DEFAULT_ARGS=[\"--no-sandbox\"]" \
+  # -e "DEFAULT_STEALTH=true" \
+  # -e "KEEP_ALIVE=true" \
+  # -e "PREBOOT_CHROME=true" \
+  # -e "EXIT_ON_HEALTH_FAILURE=true" \
+  # -e "DEFAULT_LAUNCH_ARGS=[\"--window-size=1920,5080\"]" \
+
 docker run -p 3000:3000 --restart always -d \
   -e "CONNECTION_TIMEOUT=600000" \
-  -e "DEFAULT_LAUNCH_ARGS=[\"--window-size=1920,1080\"]" \
-  --name browserless-helloworld browserless/chrome
+  -e "DEFAULT_IGNORE_HTTPS_ERRORS=true" \
+  --name browserless-helloworld \
+  browserless/chrome
+
+docker logs -f browserless-helloworld
