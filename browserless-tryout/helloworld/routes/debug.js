@@ -5,7 +5,6 @@ var router = express.Router();
 
 var config = require('../config')
 
-
 // http://localhost:8080/debug/helloworld
 
 const {BROWSER_WEBSOCKET_URL} = config
@@ -16,7 +15,6 @@ router.get('/helloworld', function(req, res) {
     res.json(test_json);
 });
 
-
 router.get('/get_title', async (req, res) => {
     var data = '';
     const browser = await puppeteer.connect({ browserWSEndpoint: BROWSER_WEBSOCKET_URL });
@@ -25,7 +23,6 @@ router.get('/get_title', async (req, res) => {
 
     res.send(await page.title());
 });
-
 
 router.get('/capture_viewport', async (req, res) => {
     const IPHONE_VIEWPORT = '1920,5080';
