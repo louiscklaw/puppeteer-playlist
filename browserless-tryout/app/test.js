@@ -2,9 +2,9 @@ const express = require('express');
 
 var route_debug = require('./routes/debug.js');
 var route_jobsdb = require('./routes/jobsdb.js');
-var route_carousell = require('./routes/carousell.js');
 
-var carousell_helloworld = require('./routes/carousell/helloworld');
+// var route_carousell = require('./routes/carousell.js');
+// var carousell_helloworld = require('./routes/carousell/helloworld');
 
 const app = express();
 
@@ -17,6 +17,9 @@ app.use('/jobsdb', route_jobsdb);
 // app.use('/carousell', route_carousell);
 require('./routes/carousell/helloworld')(app);
 require('./routes/carousell/capture_carousell')(app);
+
+require('./routes/carousell/search_keyword/check_position')(app);
+require('./routes/carousell/search_keyword/json_content')(app);
 
 
 app.listen(8080);
