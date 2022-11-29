@@ -33,9 +33,10 @@ docker network prune -f
   # -e "DEFAULT_LAUNCH_ARGS=[\"--window-size=1920,5080\"]" \
 
 docker run -p 3000:3000 --restart always -d \
-  -e "CONNECTION_TIMEOUT=600000" \
+  -e "CONNECTION_TIMEOUT=15000" \
   -e "DEFAULT_IGNORE_HTTPS_ERRORS=true" \
   --name browserless-helloworld \
+  -e "MAX_CONCURRENT_SESSIONS=3" \
   browserless/chrome
 
 docker logs -f browserless-helloworld

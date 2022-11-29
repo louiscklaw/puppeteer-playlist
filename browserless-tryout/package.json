@@ -3,7 +3,6 @@
   "description": "Exported package from browserless, ready to go!",
   "version": "1.0.0",
   "scripts": {
-    "start": "node index.js",
     "gitUpdate": "git add . && git commit -m'update browserless-tryout,' && git push"
   },
   "dependencies": {
