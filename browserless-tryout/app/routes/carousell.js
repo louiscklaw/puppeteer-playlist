@@ -1,5 +1,6 @@
 const fs = require('fs');
 const puppeteer = require('puppeteer-core');
+const Diff = require('diff');
 
 var express = require('express');
 var router = express.Router();
@@ -16,7 +17,17 @@ var STORE_PATH = `${config.STORE_PATH}/carousell`;
 
 router.get('/helloworld', function (req, res) {
   fs.writeFileSync(`${STORE_PATH}/helloworld.json`, JSON.stringify({ hello: 'world' }), { encoding: 'utf-8' });
-  res.json(test_json);
+
+  res.json(
+    Diff.diffTrimmedLines(
+      `abc
+ghi
+def`,
+      `abc
+      ghi
+      def`
+    )
+  );
 });
 
 router.get('/capture_carousell', async (req, res) => {
