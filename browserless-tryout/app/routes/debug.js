@@ -15,6 +15,10 @@ router.get('/helloworld', function (req, res) {
   res.json(test_json);
 });
 
+router.get('/helloworld', function (req, res) {
+  res.json(test_json);
+});
+
 router.get('/get_title', async (req, res) => {
   var browser = {};
   var page = {};
