@@ -15,10 +15,10 @@ router.get('/helloworld', function (req, res) {
   res.json(test_json);
 });
 
-router.get('/helloworld_get_params', function (req, res) {
-  var { params } = req;
+router.get('/get_params/:test1/:test2', function (req, res) {
+  var test = req.params;
 
-  res.json({ hello: 'world', params });
+  res.json({ hello: 'world', test: req.params });
 });
 
 router.get('/get_title', async (req, res) => {

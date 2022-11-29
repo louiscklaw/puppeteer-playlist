@@ -53,7 +53,13 @@ router.get('/capture_carousell/javascript', async (req, res) => {
   return res.end(data, 'binary');
 });
 
-router.get('/capture_carousell/javascript/json_content', async (req, res) => {
+
+
+
+router.get('/capture_carousell/:search_keyword/json_content', async (req, res) => {
+  const { params } = req;
+  const { search_keyword } = params;
+
   const browser = await puppeteer.connect({
     browserWSEndpoint: BROWSER_WEBSOCKET_URL,
     ignoreHTTPSErrors: true,
@@ -63,7 +69,7 @@ router.get('/capture_carousell/javascript/json_content', async (req, res) => {
   await page.setViewport({ width: 1920, height: 1080 * 10 });
   await page.setDefaultNavigationTimeout(0);
 
-  await page.goto('http://www.carousell.com.hk/search/javascript', {
+  await page.goto(`http://www.carousell.com.hk/search/${search_keyword}`, {
     waitUntil: ['load', 'networkidle0', 'networkidle2'],
   });
 
