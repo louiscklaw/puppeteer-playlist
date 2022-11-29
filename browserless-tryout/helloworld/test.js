@@ -61,6 +61,26 @@ app.get('/capture_carousell/javascript', async (req, res) => {
   return res.end(data, 'binary');
 });
 
+app.get('/capture_carousell/javascript/json_content', async (req, res) => {
+  const browser = await puppeteer.connect({
+    browserWSEndpoint: BROWSER_WEBSOCKET_URL,
+    ignoreHTTPSErrors: true,
+  });
+
+  const page = await browser.newPage();
+  await page.setViewport({ width: 1920, height: 1080 * 10 });
+  await page.setDefaultNavigationTimeout(0);
+
+  await page.goto('http://www.carousell.com.hk/search/javascript', { waitUntil: ['load', 'networkidle0', 'networkidle2'] });
+
+  await page.waitForTimeout(15 * 1000);
+
+  var data = await page.screenshot({ fullPage: true });
+
+  // res.send(await page.title());
+  return res.end(data, 'binary');
+});
+
 app.get('/capture_youtube_com', async (req, res) => {
   const browser = await puppeteer.connect({
     browserWSEndpoint: BROWSER_WEBSOCKET_URL,
