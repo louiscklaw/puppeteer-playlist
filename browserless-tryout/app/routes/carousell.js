@@ -12,8 +12,10 @@ const { BROWSER_WEBSOCKET_URL } = config;
 
 var test_json = { hello: 'world' };
 
+var STORE_PATH = `${config.STORE_PATH}/carousell`;
+
 router.get('/helloworld', function (req, res) {
-  fs.writeFileSync(config.STORE_PATH, JSON.stringify({ hello: 'world' }), { encoding: 'utf-8' });
+  fs.writeFileSync(`${STORE_PATH}/helloworld.json`, JSON.stringify({ hello: 'world' }), { encoding: 'utf-8' });
   res.json(test_json);
 });
 
