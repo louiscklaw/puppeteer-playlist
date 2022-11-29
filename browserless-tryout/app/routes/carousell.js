@@ -1,3 +1,4 @@
+const fs = require('fs');
 const puppeteer = require('puppeteer-core');
 
 var express = require('express');
@@ -12,6 +13,7 @@ const { BROWSER_WEBSOCKET_URL } = config;
 var test_json = { hello: 'world' };
 
 router.get('/helloworld', function (req, res) {
+  fs.writeFileSync(config.STORE_PATH, JSON.stringify({ hello: 'world' }), { encoding: 'utf-8' });
   res.json(test_json);
 });
 
@@ -52,9 +54,6 @@ router.get('/capture_carousell/javascript', async (req, res) => {
   // res.send(await page.title());
   return res.end(data, 'binary');
 });
-
-
-
 
 router.get('/capture_carousell/:search_keyword/json_content', async (req, res) => {
   const { params } = req;
@@ -114,12 +113,16 @@ router.get('/capture_carousell/:search_keyword/json_content', async (req, res) =
     });
   });
 
-  const aHandle = await page.evaluate(() => 2);
-
+  // const aHandle = await page.evaluate(() => 2);
   // var data = await page.screenshot({ fullPage: true });
-
   // return res.end(data, 'binary');
-  res.send({ title: await page.title(), aHandle, posts, screen_capture: 'test.png' });
+
+  res.send({
+    title: await page.title(),
+    aHandle,
+    posts,
+    screen_capture: 'test.png',
+  });
 });
 
 module.exports = router;
