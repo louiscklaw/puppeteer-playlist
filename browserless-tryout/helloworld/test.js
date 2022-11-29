@@ -73,8 +73,6 @@ app.get('/capture_carousell/javascript/json_content', async (req, res) => {
 
   await page.goto('http://www.carousell.com.hk/search/javascript', { waitUntil: ['load', 'networkidle0', 'networkidle2'] });
 
-  await page.waitForTimeout(15 * 1000);
-
   var data = await page.screenshot({ fullPage: true });
 
   res.send({ title: await page.title() });
