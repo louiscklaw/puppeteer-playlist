@@ -19,7 +19,7 @@ var test_json = { hello: 'world' };
 var STORE_PATH = `${config.STORE_PATH}/carousell`;
 
 module.exports = function (app) {
-  app.get('/jobsdb/get_jobsdb', async (req, res) => {
+  app.get('/jobsdb/get_jobsdb_screenshot', async (req, res) => {
     const browser = await puppeteer.connect({ browserWSEndpoint: BROWSER_WEBSOCKET_URL });
 
     const page = await browser.newPage();

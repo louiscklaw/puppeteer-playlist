@@ -19,13 +19,22 @@ var test_json = { hello: 'world' };
 var STORE_PATH = `${config.STORE_PATH}/carousell`;
 
 module.exports = function (app) {
-  app.get('/jobsdb/get_jobsdb', async (req, res) => {
-    const browser = await puppeteer.connect({ browserWSEndpoint: BROWSER_WEBSOCKET_URL });
+  app.get('/jobsdb/:keyword/get_job', async (req, res) => {
+    const { params } = req;
+    const { keyword } = params;
+    const browser = await puppeteer.connect({
+      browserWSEndpoint: BROWSER_WEBSOCKET_URL,
+      ignoreHTTPSErrors: true,
+    });
 
     const page = await browser.newPage();
-    await page.setViewport({ width: 1920, height: 1080 });
+    await page.setViewport({ width: 1920, height: 1080 * 10 });
+    await page.setDefaultNavigationTimeout(0);
 
-    await page.goto('http://www.jobsdb.com/');
+    await page.goto(`https://hk.jobsdb.com/hk/search-jobs/${keyword}/1`, {
+      waitUntil: ['load', 'networkidle0', 'networkidle2'],
+    });
+
     var data = await page.screenshot({ fullPage: true });
 
     // res.send(await page.title());
