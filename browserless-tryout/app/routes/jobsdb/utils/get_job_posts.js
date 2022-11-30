@@ -17,7 +17,7 @@ var test_json = { hello: 'world' };
 var STORE_PATH = `${config.STORE_PATH}/carousell`;
 
 const get_job_posts = async (page) => {
-  return await page.evaluate(() => {
+  var json_job_posts = await page.evaluate(() => {
     var job_titles = [];
     var job_location = [];
     var job_company = [];
@@ -48,16 +48,26 @@ const get_job_posts = async (page) => {
     });
 
     return job_titles.map((t, idx) => {
+      var title = job_titles[idx];
+      var location = job_location[idx];
+      var company = job_company[idx];
+      var link = job_link[idx];
+      var company_link = job_company_link[idx];
+
       return {
-        title: job_titles[idx],
-        location: job_location[idx],
-        company: job_company[idx],
-        link: job_link[idx],
-        company_link: job_company_link[idx],
-        checksum: crypto.createHash('md5').update(`${title}/${company}`).digest('hex'),
+        title,
+        location,
+        company,
+        link,
+        company_link,
       };
     });
   });
+
+  return json_job_posts.map((j, idx) => {
+    return { ...j, checksum: crypto.createHash('md5').update(`${j.title}/${j.company}`).digest('hex') };
+  });
+
 };
 
 module.exports = get_job_posts;
