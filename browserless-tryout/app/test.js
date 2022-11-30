@@ -11,10 +11,14 @@ const app = express();
 app.use(express.static('public'));
 
 app.use('/debug', route_debug);
-app.use('/jobsdb', route_jobsdb);
+// app.use('/jobsdb', route_jobsdb);
 
 // app.use('/carousell/helloworld', carousell_helloworld);
 // app.use('/carousell', route_carousell);
+
+require('./routes/jobsdb/helloworld')(app);
+
+
 require('./routes/carousell/helloworld')(app);
 require('./routes/carousell/capture_carousell')(app);
 

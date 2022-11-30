@@ -19,7 +19,7 @@ var test_json = { hello: 'world' };
 var STORE_PATH = `${config.STORE_PATH}/carousell`;
 
 module.exports = function (app) {
-  app.get('/carousell/helloworld', function (req, res) {
+  app.get('/jobsdb/helloworld', function (req, res) {
     fs.writeFileSync(`${STORE_PATH}/helloworld.json`, JSON.stringify({ hello: 'world' }), { encoding: 'utf-8' });
     res.send(__filename);
   });
