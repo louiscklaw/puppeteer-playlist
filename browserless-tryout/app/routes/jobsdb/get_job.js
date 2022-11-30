@@ -9,6 +9,8 @@ var config = require('../../config');
 const removeSportlight = require('../utils/removeSportlight');
 const clearAds = require('../utils/clearAds');
 const getPosts = require('../utils/getPosts');
+const helloworld = require('./utils/helloworld');
+const get_job_posts = require('./utils/get_job_posts');
 
 // http://localhost:8080/debug/helloworld
 
@@ -35,9 +37,8 @@ module.exports = function (app) {
       waitUntil: ['load', 'networkidle0', 'networkidle2'],
     });
 
-    var data = await page.screenshot({ fullPage: true });
+    var jobs_json = await get_job_posts(page);
 
-    // res.send(await page.title());
-    return res.end(data, 'binary');
+    res.json(jobs_json);
   });
 };

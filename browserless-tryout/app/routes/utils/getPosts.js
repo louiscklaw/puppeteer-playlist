@@ -18,6 +18,7 @@ var STORE_PATH = `${config.STORE_PATH}/carousell`;
 const getPosts = async (page) => {
   return await page.evaluate(() => {
     var e_all_cards = document.querySelectorAll("div[data-testid^='listing-card']");
+
     e_all_cards.forEach((e) => {
       e.querySelector('a').querySelectorAll('div')[2].querySelector('div').remove();
     });
