@@ -15,12 +15,12 @@ var test_json = { hello: 'world' };
 
 var STORE_PATH = `${config.STORE_PATH}/carousell`;
 
-const clearAds = async (page) => {
+const clearAds = async page => {
   return await page.evaluate(() => {
-    document.querySelectorAll("[id^='google_ads_iframe_']").forEach((e) => {
+    document.querySelectorAll("[id^='google_ads_iframe_']").forEach(e => {
       e.parentElement.parentElement.remove();
     });
-    document.querySelectorAll("div[id^='native-ad']").forEach((e) => e.remove());
+    document.querySelectorAll("div[id^='native-ad']").forEach(e => e.remove());
   });
 };
 

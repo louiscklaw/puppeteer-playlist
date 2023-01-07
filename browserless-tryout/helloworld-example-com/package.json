@@ -12,10 +12,12 @@
     "docker_rebuild": "yarn docker_compose_build && yarn docker_compose_rm && yarn docker_compose_up && docker compose logs -f",
     "into_docker": "docker compose exec -it backend /bin/bash",
     "browserless_log": "docker compose logs -f browserless_engine",
-    "gitUpdate": "git add . && git commit -m'update browserless-tryout,' && git push"
+    "gitUpdate": "git add . && git commit -m'update browserless-tryout,' && git push",
+    "format": "prettier --loglevel warn --write \"**/*.{js,css,html,jsx,tsx,ts,json}\""
   },
   "dependencies": {
     "express": "^4.18.2",
+    "prettier": "^2.8.2",
     "puppeteer-core": "8.0.0"
   }
 }

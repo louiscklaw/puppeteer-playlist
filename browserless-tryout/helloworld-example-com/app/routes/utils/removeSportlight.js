@@ -15,7 +15,7 @@ var test_json = { hello: 'world' };
 
 var STORE_PATH = `${config.STORE_PATH}/carousell`;
 
-const removeSportlight = async (page) => {
+const removeSportlight = async page => {
   return await page.evaluate(() => {
     var xpath = "//p[text()='Spotlight']";
 

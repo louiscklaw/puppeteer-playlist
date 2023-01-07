@@ -15,7 +15,7 @@ var test_json = { hello: 'world' };
 
 var STORE_PATH = `${config.STORE_PATH}/carousell`;
 
-const helloworld = async (page) => {
+const helloworld = async page => {
   console.log('helloworld called');
   return 'helloworld';
 };
