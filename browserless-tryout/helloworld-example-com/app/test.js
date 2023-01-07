@@ -10,6 +10,7 @@ function getRandomInt(max) {
 
 (async () => {
   async function readAdList() {
+    console.log('loading ad blocker host');
     let temp = await fs.readFileSync('./ad_list/ad_list.json', { encoding: 'utf-8' });
     let ad_list_json = JSON.parse(temp);
     return ad_list_json;
