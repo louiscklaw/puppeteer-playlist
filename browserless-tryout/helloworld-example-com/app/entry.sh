@@ -2,6 +2,4 @@
 
 set -ex
 
-yarn -d
-
-yarn nodemon
+node ./test.js
