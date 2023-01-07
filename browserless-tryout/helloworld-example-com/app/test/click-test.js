@@ -42,14 +42,15 @@ describe('click test', function () {
       let user = USER_LIST[u_i];
       let keyword = KEYWORD_LIST[k_i];
 
-      for (var c_i = 0; c_i < 1; c_i++) {
+      let i = 0;
+      for (var c_i = 0; c_i < num_of_click; c_i++) {
         it(`helloworld ${keyword} -> ${user} -> ${c_i}`, async function () {
           this.timeout(180 * 1000);
-          const filename = `${keyword}-${user}-${c_i}`;
+          const filename = `${keyword}-${user}-${i}`;
           const video_file = `${video_path}/${filename}.mp4`;
           const screenshot_file = `${screenshot_path}/${filename}.jpg`;
           const mochawesome_report_path = 'mochawesome-report';
-          console.log({ keyword, user, c_i, video_file, screenshot_file, mochawesome_report_path });
+          console.log({ keyword, user, i, video_file, screenshot_file, mochawesome_report_path });
 
           async function readAdList() {
             console.log('loading ad blocker host');
@@ -93,28 +94,28 @@ describe('click test', function () {
             }
           });
 
-          // await page.goto(`http://192.168.10.180:5500/app/site/index.html`, {
-          //   waitUntil: ['load', 'networkidle0', 'networkidle2'],
-          // });
-          // const [p_target_user] = await page.$x(`//p[contains(., '345')]`);
-
-          await page.goto(`https://www.carousell.com.hk/search/${keyword}`, {
-            waitUntil: ['networkidle0'],
+          await page.goto(`http://192.168.10.180:5500/app/site/index.html`, {
+            waitUntil: ['load', 'networkidle0', 'networkidle2'],
           });
+          const [p_target_user] = await page.$x(`//p[contains(., '345')]`);
 
-          const [p_target_user] = await page.$x(`//p[contains(., '${user}')]`);
-          if (p_target_user) {
-            const parent_node_1 = await p_target_user.getProperty('parentNode');
-            const parent_node_2 = await parent_node_1.getProperty('parentNode');
-            const parent_node_3 = await parent_node_2.getProperty('parentNode');
-            await parent_node_3.click();
+          // await page.goto(`https://www.carousell.com.hk/search/${keyword}`, {
+          //   waitUntil: ['networkidle0'],
+          // });
 
-            console.log('target user clicked, cool down');
-            await page.waitForTimeout(5 * 1000);
-          } else {
-            console.log('cannot find target user, wait');
-            await page.waitForTimeout(1 * 1000);
-          }
+          // const [p_target_user] = await page.$x(`//p[contains(., '${user}')]`);
+          // if (p_target_user) {
+          //   const parent_node_1 = await p_target_user.getProperty('parentNode');
+          //   const parent_node_2 = await parent_node_1.getProperty('parentNode');
+          //   const parent_node_3 = await parent_node_2.getProperty('parentNode');
+          //   await parent_node_3.click();
+
+          //   console.log('target user clicked, cool down');
+          //   await page.waitForTimeout(5 * 1000);
+          // } else {
+          //   console.log('cannot find target user, wait');
+          //   await page.waitForTimeout(1 * 1000);
+          // }
 
           await page.screenshot({ path: `${screenshot_file}` });
 
@@ -124,6 +125,7 @@ describe('click test', function () {
           await browser.close();
 
           console.log('done');
+          i += 1;
         });
       }
     }
