@@ -1,8 +1,9 @@
 const fs = require('fs');
 const puppeteer = require('puppeteer-core');
+
 const Diff = require('diff');
 
-const config = require('./config');
+// const config = require('./config');
 
 const { ENV_KEYWORD_LIST, ENV_USER_LIST, ENV_MIN_CLICK, ENV_MAX_CLICK } = process.env;
 
@@ -13,7 +14,7 @@ function getRandomInt(max) {
 (async () => {
   async function readAdList() {
     console.log('loading ad blocker host');
-    let temp = await fs.readFileSync('./ad_list/ad_list.json', { encoding: 'utf-8' });
+    let temp = await fs.readFileSync('../ad_list/ad_list.json', { encoding: 'utf-8' });
     let ad_list_json = JSON.parse(temp);
     return ad_list_json;
   }
@@ -26,14 +27,10 @@ function getRandomInt(max) {
     });
 
     let ad_list_json = await readAdList();
-    // let ad_list_json = ['cdn.tercept.com'];
-    // console.log({ ad_list_json });
-
     const page = await browser.newPage();
 
     page.on('request', request => {
       let incoming_url = request.url();
-      // console.log({ incoming_url });
 
       let found = false;
       for (var i = 0; i < ad_list_json.length; i++) {
@@ -57,7 +54,6 @@ function getRandomInt(max) {
     await page.setViewport({ width: 1920, height: 1080 * 3 });
     await page.setDefaultNavigationTimeout(60 * 1000);
 
-    // http://127.0.0.1:5500/app/site/index.html
     await page.goto(`http://192.168.10.180:5500/app/site/index.html`, {
       waitUntil: ['load', 'networkidle0', 'networkidle2'],
     });
