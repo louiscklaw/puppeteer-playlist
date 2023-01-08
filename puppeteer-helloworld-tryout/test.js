@@ -5,10 +5,10 @@ const chalk = require('chalk');
 
 const enablePageConsoleLog = (log_prefix, page) => {
   page
-    .on('console', (message) => {
+    .on('console', message => {
       const type = message.type().substr(0, 3).toUpperCase();
       const colors = {
-        LOG: (text) => text,
+        LOG: text => text,
         ERR: chalk.red,
         WAR: chalk.yellow,
         INF: chalk.cyan,
@@ -17,8 +17,10 @@ const enablePageConsoleLog = (log_prefix, page) => {
       console.log(color(`${log_prefix} ${type} ${message.text()}`));
     })
     .on('pageerror', ({ message }) => console.log(chalk.red(`${log_prefix} ${message}`)))
-    .on('response', (response) => console.log(chalk.green(`${log_prefix}  ${response.status()} ${response.url()}`)))
-    .on('requestfailed', (request) => console.log(chalk.magenta(`${log_prefix}  ${request.failure().errorText} ${request.url()}`)));
+    .on('response', response => console.log(chalk.green(`${log_prefix}  ${response.status()} ${response.url()}`)))
+    .on('requestfailed', request =>
+      console.log(chalk.magenta(`${log_prefix}  ${request.failure().errorText} ${request.url()}`)),
+    );
 };
 
 // start
