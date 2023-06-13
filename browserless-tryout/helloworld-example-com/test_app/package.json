@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node test.js",
     "test1": "mocha test/bootstrap.js --recursive test",
-    "test": "mocha --reporter mochawesome --reporter-options output=report.html",
+    "test": "mocha --reporter mochawesome --reporter-options output=report.html test",
     "gitUpdate": "git add . && git commit -m'update browserless-tryout,' && git push"
   },
   "dependencies": {

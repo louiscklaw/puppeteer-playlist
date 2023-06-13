@@ -10,7 +10,7 @@
     "docker_compose_rm": "docker compose rm -s -v -f",
     "docker_compose_up": "docker compose up -d",
     "docker_rebuild": "yarn docker_compose_build && yarn docker_compose_rm && yarn docker_compose_up && docker compose logs -f",
-    "into_docker": "docker compose exec -it backend /bin/bash",
+    "into_docker": "docker compose exec -it test_app /bin/bash",
     "browserless_log": "docker compose logs -f browserless_engine",
     "gitUpdate": "git add . && git commit -m'update browserless-tryout,' && git push",
     "format": "prettier --loglevel warn --write \"**/*.{js,css,html,jsx,tsx,ts,json}\""
