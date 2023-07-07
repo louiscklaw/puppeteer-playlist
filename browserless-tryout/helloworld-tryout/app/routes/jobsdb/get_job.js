@@ -18,27 +18,30 @@ const { BROWSER_WEBSOCKET_URL } = config;
 
 var test_json = { hello: 'world' };
 
-var STORE_PATH = `${config.STORE_PATH}/carousell`;
+var STORE_PATH = `${config.STORE_PATH}/jobsdb`;
+var STORE_JSON = `${STORE_PATH}/get_job.json`
+
 
 module.exports = function (app) {
   app.get('/jobsdb/:keyword/get_job', async (req, res) => {
-    const { params } = req;
-    const { keyword } = params;
-    const browser = await puppeteer.connect({
-      browserWSEndpoint: BROWSER_WEBSOCKET_URL,
-      ignoreHTTPSErrors: true,
-    });
+    // const { params } = req;
+    // const { keyword } = params;
+    // const browser = await puppeteer.connect({
+    //   browserWSEndpoint: BROWSER_WEBSOCKET_URL,
+    //   ignoreHTTPSErrors: true,
+    // });
 
-    const page = await browser.newPage();
-    await page.setViewport({ width: 1920, height: 1080 * 10 });
-    await page.setDefaultNavigationTimeout(0);
+    // const page = await browser.newPage();
+    // await page.setViewport({ width: 1920, height: 1080 * 10 });
+    // await page.setDefaultNavigationTimeout(0);
 
-    await page.goto(`https://hk.jobsdb.com/hk/search-jobs/${keyword}/1`, {
-      waitUntil: ['load', 'networkidle0', 'networkidle2'],
-    });
+    // await page.goto(`https://hk.jobsdb.com/hk/search-jobs/${keyword}/1`, {
+    //   waitUntil: ['load', 'networkidle0', 'networkidle2'],
+    // });
 
-    var jobs_json = await get_job_posts(page);
+    // var jobs_json = await get_job_posts(page);
+    // fs.writeFileSync(STORE_JSON, JSON.stringify({ hello: 'world' }), { encoding: 'utf-8' });
 
-    res.json(jobs_json);
+    res.json({ status: 'done' });
   });
 };

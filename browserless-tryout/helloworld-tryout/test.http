@@ -1,0 +1,8 @@
+###
+GET http://localhost:8081/jobsdb/helloworld
+
+###
+GET http://localhost:8081/jobsdb/get_jobsdb
+
+###
+GET http://localhost:8081/carousell/helloworld

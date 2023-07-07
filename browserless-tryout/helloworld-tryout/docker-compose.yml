@@ -1,26 +1,13 @@
 # https://doc.traefik.io/traefik/user-guides/docker-compose/acme-tls/
 
-version: '3.3'
-
 services:
-  backend:
-    container_name: 'backend'
-    hostname: backend
-    image: 'node:16'
-    user: 'node'
-    volumes:
-      - ./app:/usr/src/app
-    working_dir: /usr/src/app
-    environment:
-      HELLO: 'WORLD'
-    ports:
-      - 8081:8080
-    command: './entry.sh'
-
   browserless_engine:
-    container_name: 'browserless_engine'
-    hostname: browserless_engine
+    # container_name: 'browserless_engine'
+    # hostname: browserless_engine
     image: 'browserless/chrome'
+    shm_size: 2gb
+    volumes:
+      - /dev/shm/changedetect-playwright-chrome:/dev/shm
     # volumes:
     # - ./app:/usr/src/app
     # working_dir: /usr/src/app
@@ -32,3 +19,22 @@ services:
       FUNCTION_ENABLE_INCOGNITO_MODE: 'true'
     ports:
       - 3000:3000
+
+  backend:
+    # container_name: 'backend'
+    # hostname: backend
+    build: app
+    user: 'node'
+    volumes:
+      - ./app:/app
+      - app_modules:/app/node_modules
+      - ./volumes/backend:/volume_backend
+    working_dir: /app
+    environment:
+      HELLO: 'WORLD'
+    ports:
+      - 8081:8080
+    command: './entry.sh'
+
+volumes:
+  app_modules:

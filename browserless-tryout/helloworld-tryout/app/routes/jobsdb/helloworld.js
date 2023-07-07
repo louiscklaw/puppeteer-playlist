@@ -16,11 +16,16 @@ const { BROWSER_WEBSOCKET_URL } = config;
 
 var test_json = { hello: 'world' };
 
-var STORE_PATH = `${config.STORE_PATH}/carousell`;
+var STORE_PATH = `${config.STORE_PATH}/jobsdb`;
 
 module.exports = function (app) {
   app.get('/jobsdb/helloworld', function (req, res) {
-    fs.writeFileSync(`${STORE_PATH}/helloworld.json`, JSON.stringify({ hello: 'world' }), { encoding: 'utf-8' });
+    var STORE_JSON = `${STORE_PATH}/helloworld.json`
+
+    // console.log(`writing to ${STORE_JSON}`)
+
+    fs.writeFileSync(STORE_JSON, JSON.stringify({ hello: 'world' }), { encoding: 'utf-8' });
     res.send(__filename);
+    // res.send({ hello: 'world' })
   });
 };
