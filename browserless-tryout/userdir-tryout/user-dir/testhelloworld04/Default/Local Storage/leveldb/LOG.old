@@ -1,0 +1,18 @@
+2023/06/21-21:21:06.437 3 Reusing MANIFEST /home/logic/_workspace/chrome_profile/testhelloworld04/Default/Local Storage/leveldb/MANIFEST-000001
+2023/06/21-21:21:06.448 3 Recovering log #23
+2023/06/21-21:21:06.454 3 Reusing old log /home/logic/_workspace/chrome_profile/testhelloworld04/Default/Local Storage/leveldb/000023.log 
+2023/06/21-21:24:12.796 5 Level-0 table #27: started
+2023/06/21-21:24:12.802 5 Level-0 table #27: 20887 bytes OK
+2023/06/21-21:24:12.808 5 Delete type=0 #23
+2023/06/21-21:26:30.816 3 Level-0 table #29: started
+2023/06/21-21:26:30.850 3 Level-0 table #29: 23193 bytes OK
+2023/06/21-21:26:30.865 3 Delete type=0 #26
+2023/06/21-21:26:30.871 3 Compacting 4@0 + 1@1 files
+2023/06/21-21:26:30.935 3 Generated table #30@0: 317 keys, 1708970 bytes
+2023/06/21-21:26:30.937 3 Compacted 4@0 + 1@1 files => 1708970 bytes
+2023/06/21-21:26:30.951 3 compacted to: files[ 0 1 1 0 0 0 0 ]
+2023/06/21-21:26:30.962 3 Delete type=2 #24
+2023/06/21-21:26:30.966 3 Delete type=2 #29
+2023/06/21-21:26:30.967 3 Delete type=2 #27
+2023/06/21-21:26:30.967 3 Delete type=2 #21
+2023/06/21-21:26:30.967 3 Delete type=2 #18

@@ -8,7 +8,7 @@
     {
       "files": ["**/*.json"],
       "options": {
-        "printWidth": 320
+        "printWidth": 120
       }
     }
   ]

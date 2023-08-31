@@ -1,0 +1,23 @@
+{
+  "name": "puppeteer-userdir-tryout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gitUpdate": "git add . && git commit -m'update puppeteer-userdir-tryout,'",
+    "build": "node test.js",
+    "dev": "yarn --dev && yarn gulp",
+    "format": "prettier --loglevel warn --write \"**/*.{js,css,html,jsx,tsx,ts,json}\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "4",
+    "gulp": "^4.0.2",
+    "gulp-run-command": "^0.0.10",
+    "prettier": "^2.8.2",
+    "puppeteer": "*"
+  }
+}

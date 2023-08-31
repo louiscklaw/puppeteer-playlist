@@ -1,0 +1,24 @@
+{
+  "name": "puppeteer-playlist",
+  "version": "1.0.0",
+  "description": "https://github.com/checkly/puppeteer-examples",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gitUpdate":"git add . && git commit -m\"update puppeteer playlist,\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/louiscklaw/puppeteer-playlist.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/louiscklaw/puppeteer-playlist/issues"
+  },
+  "homepage": "https://github.com/louiscklaw/puppeteer-playlist#readme"
+}

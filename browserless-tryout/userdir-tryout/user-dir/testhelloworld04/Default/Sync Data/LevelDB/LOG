@@ -1,0 +1,3 @@
+2023/06/29-18:14:56.357 5432 Reusing MANIFEST /workspace/chrome_profile/testhelloworld04/Default/Sync Data/LevelDB/MANIFEST-000001
+2023/06/29-18:14:56.359 5432 Recovering log #25
+2023/06/29-18:14:56.360 5432 Reusing old log /workspace/chrome_profile/testhelloworld04/Default/Sync Data/LevelDB/000025.log 
