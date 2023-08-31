@@ -1,40 +1,72 @@
 # https://doc.traefik.io/traefik/user-guides/docker-compose/acme-tls/
 
+volumes:
+  backend_node_modules:
+
 services:
+  backend:
+    build: app
+    volumes:
+      - ./app:/app
+      - backend_node_modules:/node_modules
+      # - app_modules:/app/node_modules
+    working_dir: /app
+    environment:
+      DEBIAN_FRONTEND: noninteractive
+    ports:
+      - 8080:8080
+    command: ./dev.sh
+    depends_on:
+      - browserless_engine
+
+    deploy:
+      resources:
+        limits:
+          cpus: '0.1'
+          memory: 128M
+        reservations:
+          cpus: '0.01'
+          memory: 64M
+
   browserless_engine:
-    # container_name: 'browserless_engine'
+    # container_name: browserless_engine
     # hostname: browserless_engine
-    image: 'browserless/chrome'
+    image: browserless/chrome
     shm_size: 2gb
     volumes:
-      - /dev/shm/changedetect-playwright-chrome:/dev/shm
-    # volumes:
-    # - ./app:/usr/src/app
+      - ./share:/share
+      # - ./volumes/my-profile:/my-profile
     # working_dir: /usr/src/app
     environment:
-      CONNECTION_TIMEOUT: '9999000'
-      DEFAULT_IGNORE_HTTPS_ERRORS: 'true'
-      MAX_CONCURRENT_SESSIONS: '5'
-      MAX_QUEUE_LENGTH: '999'
-      FUNCTION_ENABLE_INCOGNITO_MODE: 'true'
+      CONNECTION_TIMEOUT: 99999
+      PREBOOT_QUANTITY: 5
+      MAX_CONCURRENT_SESSIONS: 5
+      MAX_QUEUE_LENGTH: 999
+      FUNCTION_ENABLE_INCOGNITO_MODE: true
+      DEFAULT_IGNORE_HTTPS_ERRORS: true
+      ENABLE_CORS: true
+      PREBOOT_CHROME: true
+      # METRICS_JSON_PATH: 'browserless-tryout'
+
+      # Function Incognito Mode
+      KEEP_ALIVE: true 
+      PREBOOT_CHROM: true
+
+      DEFAULT_STEALTH: true
+      DEFAULT_BLOCK_ADS: true
+
+      ALLOW_FILE_PROTOCOL: true
+      # DEFAULT_USER_DATA_DIR: '/my-profile'
+      DEFAULT_LAUNCH_ARGS: "[\"--window-size=1920,1080\"]"
+
     ports:
       - 3000:3000
 
-  backend:
-    # container_name: 'backend'
-    # hostname: backend
-    build: app
-    user: 'node'
-    volumes:
-      - ./app:/app
-      - app_modules:/app/node_modules
-      - ./volumes/backend:/volume_backend
-    working_dir: /app
-    environment:
-      HELLO: 'WORLD'
-    ports:
-      - 8081:8080
-    command: './entry.sh'
-
-volumes:
-  app_modules:
+    deploy:
+      resources:
+        limits:
+          cpus: '0.3'
+          memory: 1G
+        reservations:
+          cpus: '0.01'
+          memory: 64M

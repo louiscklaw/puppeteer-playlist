@@ -4,4 +4,4 @@ set -ex
 
 yarn -d
 
-yarn nodemon
+yarn start
