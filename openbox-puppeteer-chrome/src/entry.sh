@@ -18,4 +18,4 @@ export PUPPETEER_PRODUCT=firefox
 # npm run start
 
 yarn newInstall
-yarn run dev
+yarn run start
