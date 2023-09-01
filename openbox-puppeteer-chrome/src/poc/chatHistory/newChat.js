@@ -7,14 +7,14 @@ const { helloworld, newChat, appendChat } = require('../../utils/chatHistory');
 // appendChat('id', { Q: 'hello question', A: "hello answer" });
 
 newChat()
-  .then(async id => {
+  .then(async (id) => {
     await appendChat(id, { Q: 'hello question', A: 'hello answer' });
     return id;
   })
-  .then(async id => {
+  .then(async (id) => {
     await appendChat(id, { Q: 'hello question', A: 'hello answer' });
     return id;
   })
-  .catch(err => console.log('error', err));
+  .catch((err) => console.log('error', err));
 
 // helloworld();

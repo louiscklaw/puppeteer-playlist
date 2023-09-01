@@ -1,5 +1,5 @@
-function sayHelloworldblablabla(){
-  console.log('say helloworld root')
+function sayHelloworldblablabla() {
+  console.log('say helloworld root');
 }
 
-module.exports = {sayHelloworldblablabla}
+module.exports = { sayHelloworldblablabla };

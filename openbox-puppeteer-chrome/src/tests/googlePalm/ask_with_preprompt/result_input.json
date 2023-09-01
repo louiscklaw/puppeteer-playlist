@@ -2,9 +2,7 @@
   "state": "ask googlePalm done",
   "json_input": {
     "jobs_id": "blablabla",
-    "question_list": [
-      "say 'louislabs.com' to me"
-    ]
+    "question_list": ["say 'louislabs.com' to me"]
   },
   "chat_history": {
     "q_and_a": {

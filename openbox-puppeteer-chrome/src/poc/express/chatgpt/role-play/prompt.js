@@ -7,7 +7,7 @@ const END_WITH_YES = `If you understand, no need to reply me details. Reply me w
 const preset_role_json = fs.readFileSync(`${__dirname}/preset_role.json`);
 const preset_role = JSON.parse(preset_role_json);
 var d_preset_role = {};
-preset_role.forEach(v => {
+preset_role.forEach((v) => {
   d_preset_role[v.act] = {
     prompt: v.prompt,
     source: 'from preset_role.json',

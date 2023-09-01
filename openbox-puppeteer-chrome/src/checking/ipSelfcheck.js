@@ -17,7 +17,7 @@ async function getIpWithProxy() {
     const page = (await browser_with_proxy.pages())[0];
 
     await page.setRequestInterception(true);
-    page.on('request', async request => {
+    page.on('request', async (request) => {
       await useProxy(request, 'http://v2raya:20172');
     });
 

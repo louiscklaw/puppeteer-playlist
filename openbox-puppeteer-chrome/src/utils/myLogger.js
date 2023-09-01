@@ -18,7 +18,7 @@ const myLogger = winston.createLogger({
     splat(),
     label({ label: 'openbox-poe-seat' }),
     timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
-    myFormat,
+    myFormat
   ),
   transports: [
     new transports.Console({ level: 'info' }),

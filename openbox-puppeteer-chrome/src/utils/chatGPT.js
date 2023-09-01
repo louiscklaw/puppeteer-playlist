@@ -42,7 +42,7 @@ async function clearChatHistory(page) {
   await page.type(
     'textarea[placeholder="Talk to ChatGPT on Poe"]',
     'Please forget everything and start a fresh talk.',
-    { delay: 1 },
+    { delay: 1 }
   );
   await page.waitForSelector('[class*="sendButton"]');
   await page.evaluate(() => {
@@ -54,7 +54,7 @@ async function clearChatHistory(page) {
   await page.waitForTimeout(3 * 1000);
   await page.evaluate(() => {
     document.querySelector('[class*="ChatBreakButton_button__"]').click();
-    document.querySelectorAll('[class*="Message_botMessageBubble__"]').forEach(item => item.remove());
+    document.querySelectorAll('[class*="Message_botMessageBubble__"]').forEach((item) => item.remove());
   });
 }
 
@@ -75,8 +75,7 @@ async function clearModalBox(page) {
 }
 
 async function questionAndAnswer(page, question, answer_idx) {
-
-  const countAnswerBubble = page => {
+  const countAnswerBubble = (page) => {
     return page.evaluate(() => {
       return document.querySelectorAll('[class*="Message_botMessageBubble__"]').length;
     });
@@ -132,7 +131,7 @@ async function questionAndAnswer(page, question, answer_idx) {
 
   var result = {};
   for (var countdown = 60; countdown > 0; countdown--) {
-    result = await page.evaluate(answer_idx => {
+    result = await page.evaluate((answer_idx) => {
       var browser_md_reply = [];
       var txt_reply = '';
 
@@ -186,7 +185,7 @@ function assertKeyWord(to_check, keyword_wanted) {
   return assert(
     to_check.toLowerCase().indexOf(keyword_wanted) >= -1,
     `reply failed -> no "${keyword_wanted}", 
-    to_check:${to_check}`,
+    to_check:${to_check}`
   );
 }
 

@@ -2,9 +2,7 @@
   "state": "helloworld done",
   "json_input": {
     "jobs_id": "blablabla",
-    "question_list": [
-      "say 'hello 1' to me"
-    ]
+    "question_list": ["say 'hello 1' to me"]
   },
   "chat_history": {
     "q_and_a": {

@@ -26,7 +26,7 @@ async function clearChatHistory(page) {
   await page.type(
     'textarea[placeholder="Talk to Google-PaLM on Poe"]',
     'Please forget everything and start a fresh talk',
-    { delay: 50 },
+    { delay: 50 }
   );
   await page.waitForSelector('[class*="sendButton"]');
   await page.evaluate(() => {
@@ -38,12 +38,12 @@ async function clearChatHistory(page) {
   await page.waitForTimeout(getRandomSecond(3, 5) * 1000);
   await page.evaluate(() => {
     document.querySelector('[class*="ChatBreakButton_button__"]').click();
-    document.querySelectorAll('[class*="Message_botMessageBubble__"]').forEach(item => item.remove());
+    document.querySelectorAll('[class*="Message_botMessageBubble__"]').forEach((item) => item.remove());
   });
 }
 
 async function questionAndAnswer(page, question, answer_idx) {
-  const countAnswerBubble = page => {
+  const countAnswerBubble = (page) => {
     return page.evaluate(() => {
       return document.querySelectorAll('[class*="Message_botMessageBubble__"]').length;
     });
@@ -99,7 +99,7 @@ async function questionAndAnswer(page, question, answer_idx) {
   };
 
   for (var countdown = 60; countdown > 0; countdown--) {
-    reply = await page.evaluate(answer_idx => {
+    reply = await page.evaluate((answer_idx) => {
       return document.querySelectorAll('[class*="Message_botMessageBubble__"]').item(answer_idx).textContent;
     }, new_answer_bubble_length - 1);
 
@@ -139,7 +139,7 @@ async function initGooglePaLMPage(page) {
 function assertKeyWord(to_check, keyword_wanted) {
   return assert(
     to_check.toLowerCase().indexOf(keyword_wanted) >= -1,
-    chalk.yellow(`reply failed -> no "${keyword_wanted}", to_check:${to_check}`),
+    chalk.yellow(`reply failed -> no "${keyword_wanted}", to_check:${to_check}`)
   );
 }
 

@@ -23,7 +23,7 @@ const { FIREFOX_DATA_DIR } = process.env;
       defaultViewport: { width: 1024, height: 768 * 2 },
       ignoreHTTPSErrors: true,
     })
-    .then(async browser => {
+    .then(async (browser) => {
       console.log('Running tests..');
       // const page = await browser.newPage()
       const page = (await browser.pages())[0];

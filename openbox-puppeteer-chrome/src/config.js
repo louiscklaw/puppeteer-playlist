@@ -7,6 +7,7 @@ const PROMPT_ROOT = path.resolve([SRC_ROOT, 'prompt'].join('/'));
 const ERROR_ROOT = path.resolve([SRC_ROOT, 'error'].join('/'));
 const ROUTES_ROOT = path.resolve([SRC_ROOT, 'routes'].join('/'));
 const WORKER_ROOT = path.resolve([SRC_ROOT, 'worker'].join('/'));
+var { FIREFOX_DATA_DIR, CHROME_DATA_DIR } = process.env;
 
 const {
   FLOW_HANDLER_ENDPOINT,
@@ -25,6 +26,18 @@ const {
 if (!CANONICAL_HOSTNAME) {
   myLogger.error('CANONICAL_HOSTNAME not defined !!')
   throw new Error('CANONICAL_HOSTNAME not defined !!')
+}
+
+
+
+if (!CHROME_DATA_DIR) {
+  console.log('chrome data dir not set, default to /tmp');
+  CHROME_DATA_DIR = '/tmp/chrome-data-dir';
+}
+
+if (!FIREFOX_DATA_DIR) {
+  console.log('chrome data dir not set, default to /tmp');
+  FIREFOX_DATA_DIR = '/tmp/chrome-data-dir';
 }
 
 // if (!DBAPI_ENDPOINT) {
@@ -51,5 +64,7 @@ module.exports = {
   OPENBOX_POE_SEAT1_ENDPOINT,
   OPENBOX_POE_SEAT2_ENDPOINT,
 
-  CANONICAL_HOSTNAME
+  CANONICAL_HOSTNAME,
+
+  FIREFOX_DATA_DIR, CHROME_DATA_DIR
 };

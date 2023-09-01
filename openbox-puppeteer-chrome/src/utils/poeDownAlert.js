@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 const { myLogger } = require('./myLogger');
 
-var poe_seat_down_message = host => {
+var poe_seat_down_message = (host) => {
   return {
     text: '🔔🔔🔔 something wrong  🔔🔔🔔\n' + `poe seat down \`${host}\`  \n`,
   };

@@ -39,7 +39,7 @@ const { FIREFOX_DATA_DIR, CHROME_DATA_DIR } = process.env;
       ignoreHTTPSErrors: true,
       args: ['--no-sandbox', `--user-data-dir=${CHROME_DATA_DIR}`],
     })
-    .then(async browser => {
+    .then(async (browser) => {
       console.log('Running tests..');
       // const page = await browser.newPage()
       const page = (await browser.pages())[0];

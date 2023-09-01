@@ -44,7 +44,7 @@ const {
       ignoreHTTPSErrors: true,
       args: ['--no-sandbox'],
     })
-    .then(async browser => {
+    .then(async (browser) => {
       console.log('Running tests..');
       // const page = await browser.newPage()
       const page = (await browser.pages())[0];

@@ -1,5 +1,6 @@
 require('dotenv').config();
-const { CHROME_DATA_DIR } = require('../config');
+
+const { FIREFOX_DATA_DIR } = require('../config');
 
 const assert = require('chai').assert;
 const puppeteer = require('puppeteer-extra');
@@ -49,18 +50,18 @@ async function testStealthing(page) {
   }
 }
 
-async function initBrowser() {
+async function initFirefox() {
   try {
     var browser = await puppeteer.launch({
-      product: 'chrome',
+      product: 'firefox',
       headless: false,
-      executablePath: '/usr/bin/google-chrome-stable',
-      userDataDir: CHROME_DATA_DIR,
+      executablePath: '/usr/bin/firefox',
+      userDataDir: FIREFOX_DATA_DIR,
       slowMo: 1,
       // NOTE: https://wiki.mozilla.org/Firefox/CommandLineOptions
       defaultViewport: { width: 1024, height: 768 },
       ignoreHTTPSErrors: true,
-      args: [`--user-data-dir=${CHROME_DATA_DIR}`],
+      args: [`--user-data-dir=${FIREFOX_DATA_DIR}`],
     });
 
     const page = (await browser.pages())[0];
@@ -69,7 +70,7 @@ async function initBrowser() {
 
     return browser;
   } catch (error) {
-    console.log('error during initBrowser');
+    console.log('error during initFirefox');
     console.log(error);
     throw error;
   }
@@ -80,6 +81,6 @@ function helloworldBrowser() {
 }
 
 module.exports = {
-  initBrowser,
+  initFirefox,
   helloworldBrowser,
 };
