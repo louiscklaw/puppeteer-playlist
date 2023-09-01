@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "newInstall": "yarn install --modules-folder /node_modules",
+    "newInstallDev": "yarn install -D --modules-folder /node_modules",
     "gitUpdate": "git add . && git commit -m\"update src,\"",
-    "dev": "nodemon --exec \"node ./index.js\"",
-    "start": "node ./index.js"
+    "dev": "NODE_PATH=/node_modules npx nodemon index.js",
+    "start": "NODE_PATH=/node_modules node ./index.js"
   },
   "keywords": [],
   "author": "",

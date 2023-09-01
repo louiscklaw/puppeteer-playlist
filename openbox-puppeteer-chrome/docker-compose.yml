@@ -1,42 +1,44 @@
+volumes:
+  openbox_node_modules:
+
 services:
-  openbox-poe-seat1:
-    # image: logickee/openbox-poe-seat
+  openbox-puppeteer-chrome1:
     image: logickee/openbox-puppeteer-chrome
-    # image: logickee/logickee/openbox-poe-seat-final
 
-    # TODO ? do i need this ?
-    container_name: openbox-poe-seat1
-
+    privileged: true
     shm_size: "1gb"
+    
     ports:
       - 6081:6080
       - 3021:3000
       - 5901:5900
-    privileged: true
+    
     volumes:
-      - /usr/share/zoneinfo/Asia/Hong_Kong:/etc/localtime:ro
-      # - ./src/openbox-firefox/share/firefox-user-data:/share/firefox-user-data
-
       # NOTE: share firfox user profile
-      - ./volumes/openbox-poe-seat1/firefox-user-data:/workspace/firefox-user-data
+      - ./volumes/openbox-puppeteer-chrome1/firefox-user-data:/workspace/firefox-user-data
 
       # NOTE: share chrome user profile
-      - ./volumes/openbox-poe-seat1/chrome-user-data:/workspace/chrome-user-data
+      - ./volumes/openbox-puppeteer-chrome1/chrome-user-data:/workspace/chrome-user-data
       
       # NOTE: store output
-      - ./volumes/static-share/_output:/share
-
-      # NOTE: source code
-      - "./openbox-poe-seat/src:/app"
+      - ./volumes/openbox-puppeteer-chrome1/share:/share
 
       - ./volumes/logs:/logs
-    env_file: ./.env
+
+      # NOTE: source code
+      - "./src:/app"
+
+      - openbox_node_modules:/node_modules
+
+      - /etc/localtime:/etc/localtime:ro
+    # env_file: ./.env
     environment:
       - TZ=Asia/Hong_Kong
       - FIREFOX_DATA_DIR=/workspace/firefox-user-data
       - CHROME_DATA_DIR=/workspace/chrome-user-data
-      - CANONICAL_HOSTNAME=openbox-poe-seat1
-      
+      - CANONICAL_HOSTNAME=openbox-puppeteer-chrome1
+
+    cpus: 0.5
     healthcheck:
       test: ['CMD', 'curl', '-f', 'http://localhost:3000/healthcheck']
       interval: 10s
@@ -68,3 +70,17 @@ services:
   #   environment:
   #     - TZ=Asia/Hong_Kong
   #   # command: sleep infinity
+  bait:
+    cpus: 0.2
+    build: ./bait
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./bait/src:/app
+    working_dir: /app
+    ports:
+      - 18089:8080
+    command: ./dev.sh
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Hong_Kong
+    # env_file: ./.env

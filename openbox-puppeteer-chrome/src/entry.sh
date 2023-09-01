@@ -5,19 +5,6 @@ set -x
 # rm -rf node_modules
 
 export PUPPETEER_PRODUCT=firefox
-npm install
-
-npm i puppeteer-core \
-  express \
-  dotenv \
-  puppeteer-extra \
-  puppeteer-extra-plugin-stealth \
-  puppeteer-extra-plugin-adblocker \
-  puppeteer-proxy
-
-npm run start
-
-# export PUPPETEER_PRODUCT=firefox
 # npm install
 
 # npm i puppeteer-core \
@@ -28,4 +15,7 @@ npm run start
 #   puppeteer-extra-plugin-adblocker \
 #   puppeteer-proxy
 
-# npm run dev
+# npm run start
+
+yarn newInstall
+yarn run dev

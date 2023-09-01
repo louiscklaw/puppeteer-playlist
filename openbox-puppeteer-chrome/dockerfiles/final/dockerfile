@@ -43,6 +43,28 @@ ADD etc/xdg/pcmanfm /home/logic/.config/pcmanfm
 
 RUN chown 1000:1000 -R /home/logic
 
+# init volumes
+RUN mkdir /share
+RUN chown 1000:1000 -R /share
+VOLUME /share
+
+RUN mkdir /logs
+RUN chown 1000:1000 -R /logs
+VOLUME /logs
+
+RUN mkdir /node_modules
+RUN chown 1000:1000 -R /node_modules
+VOLUME /node_modules
+
+RUN mkdir -p /workspace/firefox-user-data
+RUN chown 1000:1000 -R /workspace/firefox-user-data
+VOLUME /workspace/firefox-user-data
+
+RUN mkdir -p /workspace/chrome-user-data
+RUN chown 1000:1000 -R /workspace/chrome-user-data
+VOLUME /workspace/chrome-user-data
+
+
 RUN mkdir -p /installed &&  touch /installed/final_done
 
 USER 1000

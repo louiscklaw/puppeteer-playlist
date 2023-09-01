@@ -1,1 +1,2 @@
-volumes/openbox-poe-seat1/chrome-user-data
+volumes/openbox-puppeteer-chrome1/chrome-user-data
+volumes/openbox-puppeteer-chrome1/firefox-user-data
