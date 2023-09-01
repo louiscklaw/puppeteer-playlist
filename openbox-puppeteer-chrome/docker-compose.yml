@@ -71,7 +71,7 @@ services:
   #     - TZ=Asia/Hong_Kong
   #   # command: sleep infinity
   bait:
-    cpus: 0.2
+    cpus: 0.1
     build: ./bait
     volumes:
       - /etc/localtime:/etc/localtime:ro
