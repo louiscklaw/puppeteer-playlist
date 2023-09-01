@@ -57,7 +57,7 @@ services:
 
       ALLOW_FILE_PROTOCOL: true
       # DEFAULT_USER_DATA_DIR: '/my-profile'
-      DEFAULT_LAUNCH_ARGS: "[\"--window-size=1920,1080\"]"
+      # DEFAULT_LAUNCH_ARGS: "[\"--window-size=1920,1080\"]"
 
     ports:
       - 3000:3000
