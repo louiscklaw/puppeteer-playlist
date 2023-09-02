@@ -49,7 +49,7 @@ async function testStealthing(page) {
   }
 }
 
-async function initBrowser() {
+async function initChrome() {
   try {
     var browser = await puppeteer.launch({
       product: 'chrome',
@@ -69,7 +69,7 @@ async function initBrowser() {
 
     return browser;
   } catch (error) {
-    console.log('error during initBrowser');
+    console.log('error during initChrome');
     console.log(error);
     throw error;
   }
@@ -80,6 +80,6 @@ function helloworldBrowser() {
 }
 
 module.exports = {
-  initBrowser,
+  initChrome,
   helloworldBrowser,
 };
